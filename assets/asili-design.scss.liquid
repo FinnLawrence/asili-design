@@ -1,0 +1,194 @@
+/* Copyright Asili Design 2017 */
+
+// Colour definitions
+
+
+// Variables
+$navbar-item-height: 3.5vw;
+$navbar-item-min-height: 40px;
+
+$navbar-animation-speed: 0.3s;
+
+// Shopify
+
+.shopify-preview-bar {
+  display: none;
+}
+
+// Navigation
+nav.navbar-default {
+  background-color: transparent;
+  border: 0px;
+  box-shadow: none;
+  position: fixed;
+  z-index: 5;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+
+#content {
+  margin-top: calc(14vh + 3.5vw);
+}
+
+.navbar-header {
+  width: 100%;
+  padding: 7vh 4.5vw;
+
+  .navbar-brand {
+    padding: 0px;
+    min-height: $navbar-item-min-height;
+    height: $navbar-item-height;
+
+    img {
+      min-height: $navbar-item-min-height;
+      height: $navbar-item-height;
+    }
+  }
+
+  .navbar-toggle-wrapper {
+    z-index: 12;
+    position: relative;
+    float: right;
+    display: flex;
+    align-items: center;
+    min-height: $navbar-item-min-height;
+    height: $navbar-item-height;
+
+    .navbar-toggle {
+      margin: 0px;
+      border: 0px;
+      padding: 12px 2px;
+
+      @media(min-width: 768px) {
+        display: inline-block !important;
+      }
+
+      .icon-bar {
+        width: 32px;
+        transition: all $navbar-animation-speed;
+      }
+
+      .icon-bar+.icon-bar {
+        margin-top: 8px;
+      }
+    }
+
+    .navbar-toggle.active {
+      .icon-bar:first-child {
+        transform: rotate(45deg) translate(3px, 3px);
+      }
+
+      .icon-bar:last-child {
+        transform: rotate(-45deg) translate(4px, -4px);
+      }
+    }
+
+    .navbar-toggle:hover, .navbar-toggle:focus {
+      background-color: transparent;
+    }
+  }
+}
+
+
+
+/*.full-screen-nav-wrapper:hover {
+  .nav-links-center >li:not(.active) {
+
+    a {
+      color: black;
+    }
+
+    .nav-link-image-wrapper {
+      opacity: 0;
+    }
+  }
+}*/
+
+.full-screen-nav-wrapper {
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  transition: all $navbar-animation-speed;
+
+  .nav-links {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .nav-links-center {
+    text-align: center;
+
+    >li {
+      a {
+        text-transform: lowercase;
+        font-family: UntitledSansBlack, sans-serif;
+        font-size: 6.25vw;
+        line-height: 6.25vw;
+        font-weight: bold;
+        color: black;
+        transition: all $navbar-animation-speed;
+      }
+
+      a:hover, a:focus {
+        text-decoration: none;
+      }
+
+      .nav-link-image-wrapper {
+        position: absolute;
+        z-index: -1;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: all $navbar-animation-speed;
+        opacity: 0;
+
+        img {
+          display: none;
+        }
+      }
+    }
+
+    >li:hover {
+      a {
+        color: white;
+      }
+
+      .nav-link-image-wrapper {
+        opacity: 1;
+      }
+    }
+
+    >li.active {
+      .nav-link-image-wrapper {
+        z-index: -2;
+        opacity: 1;
+      }
+    }
+  }
+
+  .nav-links-bottom {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+  }
+}
+
+.full-screen-nav-wrapper.hidden {
+  display: flex !important;
+  opacity: 0;
+  visibility: hidden;
+}
+
+// Grid & layout

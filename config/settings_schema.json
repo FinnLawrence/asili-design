@@ -177,51 +177,9 @@
     "name": "Navigation Bar",
     "settings": [
       {
-        "type": "select",
-        "id": "logo_navbar",
-        "label": "Navbar Logo",
-        "options": [
-          {
-            "value": "text",
-            "label": "Store Name Only"
-          },
-          {
-            "value": "image",
-            "label": "Uploaded Image Only"
-          },
-          {
-            "value": "both",
-            "label": "Uploaded Image & Store Name"
-          }
-        ]
-      },
-      {
-        "type": "image",
-        "id": "logo_navbar_image"
-      },
-      {
-        "type": "paragraph",
-        "content": "Navbar logos will be scaled to a height of 40px - the recommended image size is 360px x 80px, for crisp logo display on high-resolution (Retina) devices."
-      },
-      {
         "type": "link_list",
         "id": "navbar_linklist",
         "label": "Navigation Bar Link List"
-      },
-      {
-        "type": "select",
-        "id": "navbar_positioning",
-        "label": "Navigation Bar Positioning",
-        "options": [
-          {
-            "value": "static-top",
-            "label": "Scroll with rest of page (default)"
-          },
-          {
-            "value": "fixed-top",
-            "label": "Fix to top of screen"
-          }
-        ]
       }
     ]
   },

@@ -1,75 +1,62 @@
-<nav class="navbar navbar-default navbar-{{ settings.navbar_positioning }}" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <!-- Toggle Button for Navbar -->
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="navbar-header">
+
+    <!-- Brand / Logo -->
+    <a class="navbar-brand" href="{{ shop.url }}" title="{{ shop.name }}"><img src="{{ 'img-asili-logo.png' | asset_url }}" alt="{{ shop.name }}" /></a>
+
+    <!-- Toggle Button for Navbar -->
+    <div class="navbar-toggle-wrapper">
+      <button type="button" class="navbar-toggle button-toggle" data-toggle="hidden" data-target="#navigation">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-
-      <!-- Brand / Logo -->
-      <a class="navbar-brand" href="{{ shop.url }}" title="{{ shop.name }}">
-        {% unless settings.logo_navbar == 'text' %}
-          <img src="{{ 'logo_navbar_image' | asset_url }}" alt="{{ shop.name }}" />
-        {% endunless %}
-        {% unless settings.logo_navbar == 'image' %}
-          {{ shop.name }}
-        {% endunless %}
-      </a>
     </div>
+  </div>
 
-    <!-- Collapsible Navbar Content -->
-    <div class="collapse navbar-collapse">
+  <!-- Main Navigation Content -->
+  <div id="navigation" class="full-screen-nav-wrapper hidden {% if page.handle != "" %}nav-{{ page.handle }}{% endif %}">
 
-      <!-- Display linklist selected in theme settings. -->
-      {% unless linklists[settings.navbar_linklist] == empty %}
-      <ul class="nav navbar-nav">
-        {% for link in linklists[settings.navbar_linklist].links %}
+    <!-- Display linklist selected in theme settings. -->
+    {% unless linklists[settings.navbar_linklist] == empty %}
+    <ul class="nav-links nav-links-center">
+      {% for link in linklists[settings.navbar_linklist].links %}
 
-          <!-- Check to see if this menu item has a child menu. -->
-          {% capture child_list_handle %}{{ link.title | handle }}{% endcapture %}
-          {% if linklists[child_list_handle] and linklists[child_list_handle].links.size > 0 %}{% assign has_dropdown = true %}{% else %}{% assign has_dropdown = false %}{% endif %}
-
-          <li class="{% if link.active %}active{% endif %} {% if has_dropdown %}dropdown{% endif %}">
-            <a href="{{ link.url }}" {% if has_dropdown %}class="dropdown-toggle" data-toggle="dropdown"{% endif %}>
-              {{ link.title }}
-              {% if has_dropdown %}<b class="caret"></b>{% endif %}
-            </a>
-            {% if has_dropdown %}
-              <ul class="dropdown-menu" role="menu">
-                {% for child_link in linklists[child_list_handle].links %}
-                  <li><a href="{{ child_link.url }}">{{ child_link.title }}</a></li>
-                {% endfor %}
-              </ul>
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
-      {% endunless %}
-
-      <!-- Additional (Right) Navigation Links -->
-      <ul class="nav navbar-nav navbar-right">
-        <li>
-          <a href="/search" title="Search..."><span class="glyphicon glyphicon-search"></span></a>
-        </li>
-        {% if shop.customer_accounts_enabled %}
-          {% if customer %}
-            <li>
-              <a href="/account">{{ customer.first_name }} {{ customer.last_name }}</a>
-            </li>
-          {% else %}
-            <li>
-              {{ "Log In" | customer_login_link }}
-            </li>
+      <li class="{% if link.active %}active{% endif %}">
+        <a href="{{ link.url }}">{{ link.title }}</a>
+        <div class="nav-link-image-wrapper">
+          {% if link.type == "page_link" %}
+          <img src="{{ link.object.metafields.asili_page.navigation_image }}" data-position="{{ link.object.metafields.asili_page.navigation_image_position}}" onload="backgroundLoaded(this)">
+          {% elsif link.type == "collection_link" or link.type == "product_link" %}
+          <img src="{{ 'img-navigation-store.jpg' | asset_url }}" data-position="50% 50%" onload="backgroundLoaded(this)">
+          {% elsif link.type == "blog_link" %}
+          <img src="{{ 'img-navigation-journal.jpg' | asset_url }}" data-position="50% bottom" onload="backgroundLoaded(this)">
           {% endif %}
-        {% endif %}
-        <li>
-          <a href="/cart">Cart ({{ cart.item_count }})</a>
-        </li>
-      </ul>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endunless %}
 
-    </div>
+    <!-- Additional (Bottom) Navigation Links -->
+    <ul class="nav-links nav-links-bottom">
+      <li>
+        <a href="/search" title="Search..."><span class="glyphicon glyphicon-search"></span></a>
+      </li>
+      {% if shop.customer_accounts_enabled %}
+      {% if customer %}
+      <li>
+        <a href="/account">{{ customer.first_name }} {{ customer.last_name }}</a>
+      </li>
+      {% else %}
+      <li>
+        {{ "Log In" | customer_login_link }}
+      </li>
+      {% endif %}
+      {% endif %}
+      <li>
+        <a href="/cart">Cart ({{ cart.item_count }})</a>
+      </li>
+    </ul>
+
   </div>
 </nav>

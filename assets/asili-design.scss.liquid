@@ -27,10 +27,6 @@ nav.navbar-default {
   width: 100%;
 }
 
-#content {
-  margin-top: calc(14vh + 3.5vw);
-}
-
 .navbar-header {
   width: 100%;
   padding: 7vh 4.5vw;
@@ -93,16 +89,16 @@ nav.navbar-default {
 
 
 /*.full-screen-nav-wrapper:hover {
-  .nav-links-center >li:not(.active) {
+.nav-links-center >li:not(.active) {
 
-    a {
-      color: black;
-    }
+a {
+color: black;
+}
 
-    .nav-link-image-wrapper {
-      opacity: 0;
-    }
-  }
+.nav-link-image-wrapper {
+opacity: 0;
+}
+}
 }*/
 
 .full-screen-nav-wrapper {
@@ -125,6 +121,29 @@ nav.navbar-default {
 
   .nav-links-center {
     text-align: center;
+    z-index: 12;
+
+    .nav-link-image-wrapper {
+      position: absolute;
+      z-index: -1;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transition: all $navbar-animation-speed;
+      opacity: 0;
+
+      img {
+        display: none;
+      }
+    }
+    
+    .nav-link-image-wrapper.nav-list-image-wrapper {
+      background: white;
+      z-index: -3;
+    }
 
     >li {
       a {
@@ -139,23 +158,6 @@ nav.navbar-default {
 
       a:hover, a:focus {
         text-decoration: none;
-      }
-
-      .nav-link-image-wrapper {
-        position: absolute;
-        z-index: -1;
-        top: 0px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        transition: all $navbar-animation-speed;
-        opacity: 0;
-
-        img {
-          display: none;
-        }
       }
     }
 
@@ -176,8 +178,16 @@ nav.navbar-default {
       }
     }
   }
+  
+  .nav-links-center:hover {
+    .nav-link-image-wrapper.nav-list-image-wrapper {
+      opacity: 1;
+    }
+  }
 
   .nav-links-bottom {
+    /* TODO Remove display:none */
+    display: none;
     position: absolute;
     width: 100%;
     bottom: 0px;
@@ -192,3 +202,38 @@ nav.navbar-default {
 }
 
 // Grid & layout
+
+section.nav-padded {
+  margin-top: calc(14vh + 3.5vw);
+}
+
+section.full-width {
+  width: 100%;
+}
+
+section.full-height {
+  min-height: 100vh;
+}
+
+.video-wrapper {
+  overflow: hidden;
+
+  video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+  }
+}
+
+.video-wrapper.full-width {
+  width: 100%;
+}
+
+.video-wrapper.full-height {
+  height: 100vh;
+}

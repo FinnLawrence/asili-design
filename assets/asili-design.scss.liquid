@@ -1,7 +1,8 @@
 /* Copyright Asili Design 2017 */
 
 // Colour definitions
-
+$color-asili-dark: #312E35;
+$color-asili-light: #FCF7EA;
 
 // Variables
 $navbar-item-height: 3.5vw;
@@ -139,7 +140,7 @@ opacity: 0;
         display: none;
       }
     }
-    
+
     .nav-link-image-wrapper.nav-list-image-wrapper {
       background: white;
       z-index: -3;
@@ -149,11 +150,16 @@ opacity: 0;
       a {
         text-transform: lowercase;
         font-family: UntitledSansBlack, sans-serif;
-        font-size: 6.25vw;
-        line-height: 6.25vw;
+        font-size: 40px;
+        line-height: 40px;
         font-weight: bold;
-        color: black;
+        color: $color-asili-dark;
         transition: all $navbar-animation-speed;
+        
+        @media(min-width: 768px) {
+          font-size: 6.25vw;
+          line-height: 6.25vw;
+        }
       }
 
       a:hover, a:focus {
@@ -163,7 +169,7 @@ opacity: 0;
 
     >li:hover {
       a {
-        color: white;
+        color: $color-asili-light;
       }
 
       .nav-link-image-wrapper {
@@ -178,7 +184,7 @@ opacity: 0;
       }
     }
   }
-  
+
   .nav-links-center:hover {
     .nav-link-image-wrapper.nav-list-image-wrapper {
       opacity: 1;
@@ -201,7 +207,42 @@ opacity: 0;
   visibility: hidden;
 }
 
+// Font & Typography
+html, body, h1, h2, h3, h4, h5, h6 {
+  font-family: Proxima-Nova, sans-serif;
+}
+
 // Grid & layout
+
+#content {
+  overflow: hidden;
+}
+
+body {
+  .asili-grid-content .content-wrapper {
+    color: $color-asili-dark;
+  }
+
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: $color-asili-dark;
+  }
+}
+
+body.dark {
+  .asili-grid-content .content-wrapper {
+    color: $color-asili-light;
+  }
+
+  .navbar-default .navbar-toggle .icon-bar {
+    background-color: $color-asili-light;
+  }
+}
+
+body.nav-open {
+  .brand-wrapper {
+    opacity: 0;
+  }
+}
 
 section.nav-padded {
   margin-top: calc(14vh + 3.5vw);
@@ -213,6 +254,51 @@ section.full-width {
 
 section.full-height {
   min-height: 100vh;
+}
+
+section.full-width.full-height {
+  position: relative;
+}
+
+.brand-wrapper {
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all $navbar-animation-speed;
+  
+  .brand-content {
+    width: 250px;
+    text-align: center;
+    
+    @media(min-width: 768px) {
+      width: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    
+    img {
+      width: 100%;
+      padding: 20px 50px;
+      @media(min-width: 768px) {
+        width: 10vw;
+        padding: 0px 20px;
+      }
+    }
+    
+    .brand-text {
+      color: $color-asili-light;
+      font-weight: bold;
+      font-size: 16px;
+      margin: 0px 20px;
+    }
+  }
 }
 
 .video-wrapper {
@@ -236,4 +322,72 @@ section.full-height {
 
 .video-wrapper.full-height {
   height: 100vh;
+}
+
+.asili-grid-wrapper {
+  @media(min-width: 768px) {
+    display: flex;
+  }
+
+  .asili-grid-half {
+    width: 100%;
+    min-height: 50vh;
+
+    @media(min-width: 768px) {
+      width: 50%;
+      min-height: 100vh;
+    }
+  }
+
+  .asili-grid-image-background {
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    img {
+      display: none;
+    }
+  }
+
+  .asili-grid-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 5%;
+    
+    h1, h2, h3, h4, h5, h6 {
+      text-transform: lowercase;
+      font-weight: bold;
+      margin: 0px;
+      margin-bottom: 6vh;
+      
+      @media(min-width: 768px) {
+        font-size: 2.6vw;
+        line-height: 115%;
+      }
+    }
+    
+    p {
+      font-weight: 600;
+      font-size: 13px;
+      
+      @media(min-width: 768px) {
+        max-width: 25vw;
+      }
+    }
+  }
+
+  .asili-grid-content:last-child {
+    /* Right hand side of the page */
+
+    @media(min-width: 768px) {
+      padding: 0px;
+      padding-left: 10vw;
+      
+      .content-wrapper {
+        margin-top: 20vh;
+        margin-bottom: 5vh;
+        margin-right: 15vw;
+      }
+    }
+  }
 }

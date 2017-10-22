@@ -1,15 +1,37 @@
+<section class="full-width full-height nav-padded">
+  <div class="blog-wrapper">
+    {% for article in blog.articles %}
+    <article class="blog-section">
+      <div class="blog-preview">
+        <a href="{{ article.url }}"><h3 class="blog-title">{{ article.title | escape }}</h3></a>
+        {% if article.excerpt.size > 0 %}
+          {{ article.excerpt }}
+        {% else %}
+          <p>{{ article.content | strip_html | truncatewords: 50 }}</p>
+        {% endif %}
+      </div>
+      <div class="blog-image">
+        <div class="image-wrapper">
+          <img src="{{ article | img_url: 'original' }}" onload="backgroundLoaded(this)">
+        </div>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+<!--
 <header class="page-header">
-    <!-- Atom Feed Subscribe Link -->
+    <!-- Atom Feed Subscribe Link
     <a href="{{ blog.url }}.atom" title="Subscribe to Atom Feed" class="pull-right"><span class="glyphicon glyphicon-pushpin"></span></a>
 
-    <!-- Blog Title -->
+    <!-- Blog Title
     <h1>{{ blog.title }}</h1>
 </header>
 
 <div class="container">
   <div class="row">
 
-    <!-- Articles List -->
+    <!-- Articles List
     <div class="col-md-9">
       {% paginate blog.articles by 5 %}
       {% for article in blog.articles %}
@@ -30,17 +52,17 @@
       {% endpaginate %}
     </div>
 
-    <!-- Blog Tags (Desktop & Tablet) -->
+    <!-- Blog Tags (Desktop & Tablet)
     <div class="col-md-2 col-md-offset-1 hidden-xs text-right">
       <h4 class="text-muted">Tags</h4>
       {% include 'tag-list' with blog %}
     </div>
 
-    <!-- Blog Tags (Phone) -->
+    <!-- Blog Tags (Phone)
     <div class="col-md-2 col-md-offset-1 visible-xs text-center">
       <h4 class="muted">Tags</h4>
       {% include 'tag-list' with blog %}
     </div>
 
   </div>
-</div>
+</div> -->

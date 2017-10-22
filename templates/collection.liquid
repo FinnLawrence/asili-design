@@ -1,46 +1,50 @@
-<header class="page-header">
-  <h1>{{ collection.title }}</h1>
-</header>
+<section class="full-width full-height nav-padded">
+  <div class="blog-wrapper">
+    <header class="page-header">
+      <h1>{{ collection.title }}</h1>
+    </header>
 
-<!-- Display the collection description if one exists. -->
-{% unless collection.description == '' %}
-  <p class="lead">{{ collection.description }}</p>
-{% endunless %}
+    <!-- Display the collection description if one exists. -->
+    {% unless collection.description == '' %}
+    <p class="lead">{{ collection.description }}</p>
+    {% endunless %}
 
-<div class="row">
+    <div class="row">
 
-  <!-- Products -->
-  <div class="col-md-9">
-    {% paginate collection.products by 12 %}
+      <!-- Products -->
+      <div class="col-md-9">
+        {% paginate collection.products by 12 %}
 
-    {% if collection.products.size == 0 %}
-      <div class="panel panel-default">
-        <div class="panel-body">
-          No products found in this collection.
+        {% if collection.products.size == 0 %}
+        <div class="panel panel-default">
+          <div class="panel-body">
+            No products found in this collection.
+          </div>
         </div>
-      </div>
-    {% else %}
-      <!-- Include product list in groups of 3. -->
-      {% for product in collection.products %}
+        {% else %}
+        <!-- Include product list in groups of 3. -->
+        {% for product in collection.products %}
         {% include 'product-list' with '3' %}
-      {% endfor %}
+        {% endfor %}
 
-      <div class="text-center">
-        {% include 'pagination' with 'product' %}
+        <div class="text-center">
+          {% include 'pagination' with 'product' %}
+        </div>
+        {% endif %}
+
+        {% endpaginate %}
       </div>
-    {% endif %}
 
-    {% endpaginate %}
+      <!-- Product Tags (Desktop & Tablet) -->
+      <div class="col-md-2 col-md-offset-1 hidden-xs text-right">
+        {% include 'tag-list' with collection %}
+      </div>
+
+      <!-- Product Tags (Phone) -->
+      <div class="col-md-2 col-md-offset-1 visible-xs text-center">
+        {% include 'tag-list' with collection %}
+      </div>
+
+    </div>
   </div>
-
-  <!-- Product Tags (Desktop & Tablet) -->
-  <div class="col-md-2 col-md-offset-1 hidden-xs text-right">
-    {% include 'tag-list' with collection %}
-  </div>
-
-  <!-- Product Tags (Phone) -->
-  <div class="col-md-2 col-md-offset-1 visible-xs text-center">
-    {% include 'tag-list' with collection %}
-  </div>
-
-</div>
+</section>

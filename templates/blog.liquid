@@ -12,7 +12,7 @@
       </div>
       <div class="blog-image">
         <div class="image-wrapper">
-          <img src="{{ article | img_url: 'original' }}" onload="backgroundLoaded(this)">
+          <a href="{{ article.url }}"><img src="{{ article | img_url: 'original' }}"></a>
         </div>
       </div>
     </article>

@@ -50,6 +50,10 @@
       function backgroundLoaded(element) {
         var url = "url('" + element.src + "')";
         var parent = element.parentNode;
+        var parentClasses = parent.classList + "";
+        if(parentClasses.indexOf("fades-in") >= 0) {
+          parent.style.opacity = 1; 
+        }
         var bgPosition = element.dataset.position;
         if (bgPosition) {
           parent.style.backgroundPosition = bgPosition;

@@ -220,6 +220,10 @@ html, body, h1, h2, h3, h4, h5, h6 {
 
 .product-wrapper {
   margin: 0px 4.5%;
+  
+  .product-actions {
+    padding-bottom: 60px;
+  }
 }
 
 .product-price {
@@ -464,7 +468,11 @@ body.nav-open {
 }
 
 section.nav-padded {
-  margin-top: calc(14vh + 3.5vw);
+  margin-top: calc(14vh + 40px);
+  
+  @media(min-width: 768px) {
+    margin-top: calc(14vh + 3.5vw);
+  }
 }
 
 section.full-width {
@@ -477,6 +485,24 @@ section.full-height {
 
 section.full-width.full-height {
   position: relative;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  
+  .col {
+    float: none;
+  }
+}
+
+.valign-wrapper {
+  display: flex;
+  align-items: center;
+  
+  >* {
+    width: 100%;
+  }
 }
 
 .fades-in {

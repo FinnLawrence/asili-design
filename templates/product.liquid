@@ -3,7 +3,7 @@
     <!-- Wrapping Product Div -->
     <div itemscope itemtype="http://schema.org/Product">
       <div class="row">
-        <div class="col-lg-7">
+        <div class="col-lg-7 valign-wrapper">
           <div class="product-images-container">
             <div class="product-images-wrapper">
               {% for image in product.images %}
@@ -21,7 +21,8 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-5 valign-wrapper">
+          <div class="product-actions">
           <div class="product-details">
             <h1><span itemprop="name">{{ product.title }}</span><!-- Availability Microdata --><meta itemprop="availability" content="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}" /></h1>
             {{ product.description }}
@@ -56,6 +57,7 @@
             <a href="{{ collection.url }}">&lt; Back to {{ collection.title }}</a>
           </div>
           {% endif %}
+        </div>
         </div>
       </div>
     </div>

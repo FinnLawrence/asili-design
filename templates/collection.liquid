@@ -10,21 +10,19 @@
     <p class="lead">{{ collection.description }}</p>
     {% endunless %}
 
-    <div class="row">
 
-      <!-- Products -->
-      {% if collection.products.size == 0 %}
-      <div class="panel panel-default">
-        <div class="panel-body">
-          No products found in this collection.
-        </div>
+    <!-- Products -->
+    {% if collection.products.size == 0 %}
+    <div class="panel panel-default">
+      <div class="panel-body">
+        No products found in this collection.
       </div>
-      {% else %}
-      <!-- Include product list. -->
-      {% for product in collection.products %}
-      {% include 'product-list' with '2' %}
-      {% endfor %}
-      {% endif %}
     </div>
+    {% else %}
+    <!-- Include product list. -->
+    {% for product in collection.products %}
+    {% include 'product-list' with '2' %}
+    {% endfor %}
+    {% endif %}
   </div>
 </section>

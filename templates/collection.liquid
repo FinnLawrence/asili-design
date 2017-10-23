@@ -3,38 +3,28 @@
 
     <!-- Display the collection description if one exists. -->
     {% unless collection.description == '' %}
+    <!-- TODO Make this look good -->
+    <header class="page-header">
+      <h1>{{ collection.title }}</h1>
+    </header>
     <p class="lead">{{ collection.description }}</p>
     {% endunless %}
 
     <div class="row">
 
       <!-- Products -->
-      <div class="col-md-9">
-
-        {% if collection.products.size == 0 %}
-        <div class="panel panel-default">
-          <div class="panel-body">
-            No products found in this collection.
-          </div>
+      {% if collection.products.size == 0 %}
+      <div class="panel panel-default">
+        <div class="panel-body">
+          No products found in this collection.
         </div>
-        {% else %}
-        <!-- Include product list in groups of 3. -->
-        {% for product in collection.products %}
-        {% include 'product-list' with '3' %}
-        {% endfor %}
-        {% endif %}
       </div>
-
-      <!-- Product Tags (Desktop & Tablet) -->
-      <div class="col-md-2 col-md-offset-1 hidden-xs text-right">
-        {% include 'tag-list' with collection %}
-      </div>
-
-      <!-- Product Tags (Phone) -->
-      <div class="col-md-2 col-md-offset-1 visible-xs text-center">
-        {% include 'tag-list' with collection %}
-      </div>
-
+      {% else %}
+      <!-- Include product list. -->
+      {% for product in collection.products %}
+      {% include 'product-list' with '2' %}
+      {% endfor %}
+      {% endif %}
     </div>
   </div>
 </section>

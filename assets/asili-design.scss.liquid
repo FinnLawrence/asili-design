@@ -1,23 +1,35 @@
 /* Copyright Asili Design 2017 */
 
+// ##################
 // Colour definitions
+// ##################
+
 $color-asili-dark: #312E35;
+$color-asili-dark-hover: #646168;
 $color-asili-light: #FCF7EA;
 
+// #########
 // Variables
+// #########
+
 $navbar-item-height: 3.5vw;
 $navbar-item-min-height: 40px;
 
 $navbar-animation-speed: 0.3s;
 $general-animation-speed: 0.5s;
 
+// #######
 // Shopify
+// #######
 
 .shopify-preview-bar {
   display: none;
 }
 
+// ##########
 // Navigation
+// ##########
+
 nav.navbar-default {
   background-color: transparent;
   border: 0px;
@@ -87,21 +99,6 @@ nav.navbar-default {
     }
   }
 }
-
-
-
-/*.full-screen-nav-wrapper:hover {
-.nav-links-center >li:not(.active) {
-
-a {
-color: black;
-}
-
-.nav-link-image-wrapper {
-opacity: 0;
-}
-}
-}*/
 
 .full-screen-nav-wrapper {
   position: fixed;
@@ -213,16 +210,163 @@ html, body, h1, h2, h3, h4, h5, h6 {
   font-family: Proxima-Nova, sans-serif;
 }
 
+// #####################
 // Products, collections
+// #####################
 
 .collection-wrapper {
-  margin: 0px 5%;
+  margin: 0px 4.5%;
 }
 
+.product-wrapper {
+  margin: 0px 4.5%;
+}
+
+.product-price {
+  color: $color-asili-dark;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.product-image-wrapper {
+  overflow: hidden;
+}
+
+.product-image {
+  transition: all $general-animation-speed !important;
+}
+
+.product-thumbnail {
+  display: block;
+}
+
+.product-images-container {
+  display: flex;
+  flex-direction: column;
+
+  @media(min-width: 768px) {
+    flex-direction: row-reverse;
+  }
+
+  .product-images-wrapper {
+    width: 100%;
+
+    @media(min-width: 768px) {
+      width: 75%;
+    }
+  }
+
+  .product-image-selector {
+    width: 100%;
+    padding: 5vw;
+
+    @media(min-width: 768px) {
+      width: 25%;
+      flex-direction: column;
+      padding: 0px 5vw 0px 0px;
+      justify-content: center;
+    }
+
+    .product-thumbnail + .product-thumbnail {
+      margin-left: 5vw;
+
+      @media(min-width: 768px) {
+        margin-left: 0px;
+        margin-top: 5vw;
+      }
+    }
+  }
+}
+
+.product-image-selector {
+  display: flex;
+  flex-direction: row;
+
+  .product-thumbnail {
+    width: 100%;
+  }
+}
+
+.product-images-wrapper {
+  position: relative;
+
+  .product-image {
+    position: relative;
+    z-index: 2;
+  }
+
+  .product-image:nth-of-type(n+2) {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+  }
+
+  .product-image.active {
+    display: block;
+  }
+
+  .product-image.inactive {
+    opacity: 0 !important;
+    visibility: hidden;
+  }
+}
+
+.product-details {
+  font-weight: 600;
+  
+  h1 {
+    margin-bottom: 25px;
+  }
+
+  @media(min-width: 1200px) {
+    max-width: 25vw;
+  }
+}
+
+.product-grid-wrapper {
+  padding: 0px 7.5%;
+
+  .product-grid {
+    display: block;
+    text-align: center;
+    margin-bottom: 15vh;
+  }
+
+  .product-grid:hover, .product-grid:focus {
+    text-decoration: none;
+
+    .product-image {
+      transform: scale(1.1);
+    }
+  }
+
+  .product-grid:focus {
+    outline: none;
+  }
+}
+
+.back-to-collection {
+  margin-top: 40px;
+  
+  a {
+    text-transform: lowercase;
+    color: $color-asili-dark;
+  }
+  
+  a:hover, a:focus {
+    text-decoration: none;
+  }
+}
+
+// ####
 // Blog
+// ####
 
 .blog-wrapper {
-  margin: 0px 5%;
+  margin: 0px 4.5%;
   padding: 30px 0px;
 
   .blog-section {
@@ -230,7 +374,7 @@ html, body, h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
     flex-direction: column-reverse;
-    
+
     @media(min-width: 768px) {
       flex-direction: row;
       margin-top: -30px;
@@ -238,30 +382,30 @@ html, body, h1, h2, h3, h4, h5, h6 {
 
     .blog-preview, .blog-image {
       padding: 0px 5%;
-      
+
       @media(min-width: 768px) {
         width: 50%;
       }
     }
 
     .blog-image {
-      
+
       img {
         width: 100%;
       }
     }
-    
+
     .blog-preview {
       a:hover, a:focus {
         text-decoration: none;
       }
-      
+
       p {
         font-size: 16px;
         font-weight: 600;
         margin-bottom: 100px;
       }
-      
+
       .blog-title {
         font-weight: bold;
         color: $color-asili-dark;
@@ -273,7 +417,7 @@ html, body, h1, h2, h3, h4, h5, h6 {
       }
     }
   }
-  
+
   .blog-section:nth-child(even) {
     @media(min-width: 768px) {
       flex-direction: row-reverse;
@@ -281,7 +425,9 @@ html, body, h1, h2, h3, h4, h5, h6 {
   }
 }
 
+// #############
 // Grid & layout
+// #############
 
 #content {
   overflow: hidden;
@@ -311,7 +457,7 @@ body.nav-open {
   .brand-wrapper {
     opacity: 0;
   }
-  
+
   .navbar-default .navbar-toggle .icon-bar {
     background-color: $color-asili-dark;
   }
@@ -336,6 +482,19 @@ section.full-width.full-height {
 .fades-in {
   opacity: 0;
   transition: opacity $general-animation-speed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  img {
+    display: none;
+  }
+}
+
+.square:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
 }
 
 .brand-wrapper {
@@ -473,4 +632,104 @@ section.full-width.full-height {
       }
     }
   }
+}
+
+// #####
+// FORMS
+// #####
+
+form {
+
+  label {
+    text-transform: uppercase;
+    font-weight: 400;
+    margin: 0px;
+  }
+
+  input, label, textarea {
+    font-size: 13px;
+  }
+
+  .btn {
+    text-transform: lowercase;
+    font-weight: 600;
+    border-radius: 0px;
+    background-color: transparent;
+    border-color: $color-asili-dark;
+    color: $color-asili-dark;
+  }
+  
+  .btn:hover, .btn:focus, .btn:active {
+    background-color: $color-asili-dark;
+    color: $color-asili-light;
+  }
+
+  .form-group.form-group-text {
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid black;
+    border-color: $color-asili-dark;
+
+    label {
+      color: $color-asili-dark-hover;
+    }
+
+    input, textarea {
+      box-shadow: none;
+      border: 0px;
+      border-radius: 0px;
+      padding: 7px 10px;
+    }
+  }
+
+  .form-group.form-group-radio {
+
+    label {
+      color: $color-asili-dark-hover;
+    }
+
+    .radio-label {
+      height: 34px;
+      line-height: 34px;
+      border-bottom: 2px solid black;
+      border-color: $color-asili-dark;
+    }
+
+    .radio+.radio {
+      margin-top: 0px;
+    }
+
+    .radio {
+      position: relative;
+      display: inline-block;
+      height: 34px;
+      margin: 0px;
+
+      input[type="radio"] {
+        margin: 0px;
+        opacity: 0;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+      }
+
+      label {
+        margin-left: 10px;
+        padding: 0px;
+        height: 34px;
+        line-height: 34px;
+        transition: color 0.3s;
+      }
+
+      input[type="radio"]:checked+label { 
+        color: $color-asili-dark;
+      }
+    }
+  }
+}
+
+.form-add-to-cart {
+  margin-top: 25px;
 }

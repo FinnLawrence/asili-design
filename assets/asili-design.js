@@ -2,6 +2,11 @@ $(document).ready(function() {
   $('.button-toggle').click(function() {
     toggleFor($(this));
   });
+  
+  $('.product-thumbnail').click(function(e){
+    e.preventDefault();
+    showProductImageFor($(this));
+  });
 });
 
 function toggleFor(button) {
@@ -16,4 +21,10 @@ function toggleFor(button) {
   if (bodyClass) {
     $('body').toggleClass(bodyClass);
   }
+}
+
+function showProductImageFor(button) {
+  var targetSelector = button.attr("href");
+  $('.product-image').addClass("inactive");
+  $(targetSelector).removeClass("inactive").addClass("active");
 }

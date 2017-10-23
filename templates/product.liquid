@@ -2,8 +2,8 @@
   <div class="product-wrapper">
     <!-- Wrapping Product Div -->
     <div itemscope itemtype="http://schema.org/Product">
-      <div class="row">
-        <div class="col-lg-7 valign-wrapper">
+      <div class="row row-flex row-flex-lg">
+        <div class="col-flex col-lg-7 valign-wrapper">
           <div class="product-images-container">
             <div class="product-images-wrapper">
               {% for image in product.images %}
@@ -21,43 +21,43 @@
             </div>
           </div>
         </div>
-        <div class="col-lg-5 valign-wrapper">
+        <div class="col-flex col-lg-5 valign-wrapper">
           <div class="product-actions">
-          <div class="product-details">
-            <h1><span itemprop="name">{{ product.title }}</span><!-- Availability Microdata --><meta itemprop="availability" content="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}" /></h1>
-            {{ product.description }}
-          </div>
-          <!-- Add to Cart Form -->
-          <div class="form-add-to-cart">
-            <form action="/cart/add" method="post" role="form">
+            <div class="product-details">
+              <h1><span itemprop="name">{{ product.title }}</span><!-- Availability Microdata --><meta itemprop="availability" content="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}" /></h1>
+              {{ product.description }}
+            </div>
+            <!-- Add to Cart Form -->
+            <div class="form-add-to-cart">
+              <form action="/cart/add" method="post" role="form">
 
-              <!-- Product Variants -->
-              {% if product.variants.size > 1 %}
-              <div class="form-group">
-                <select id="product-select" name="id" class="form-control">
-                  {% for variant in product.variants %}
-                  <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
-                  {% endfor %}
-                </select>
-              </div>
-              {% else %}
-              <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-              {% endif %}
+                <!-- Product Variants -->
+                {% if product.variants.size > 1 %}
+                <div class="form-group">
+                  <select id="product-select" name="id" class="form-control">
+                    {% for variant in product.variants %}
+                    <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+                    {% endfor %}
+                  </select>
+                </div>
+                {% else %}
+                <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                {% endif %}
 
-              <!-- Add To Cart Button -->
-              <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-lg" id="product-add">Add to Cart</button>
-              </div>
+                <!-- Add To Cart Button -->
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-lg" id="product-add">Add to Cart</button>
+                </div>
 
-            </form>
+              </form>
+            </div>
+            <!-- End Add to Cart Form -->
+            {% if collection %}
+            <div class="back-to-collection">
+              <a href="{{ collection.url }}">&lt; Back to {{ collection.title }}</a>
+            </div>
+            {% endif %}
           </div>
-          <!-- End Add to Cart Form -->
-          {% if collection %}
-          <div class="back-to-collection">
-            <a href="{{ collection.url }}">&lt; Back to {{ collection.title }}</a>
-          </div>
-          {% endif %}
-        </div>
         </div>
       </div>
     </div>

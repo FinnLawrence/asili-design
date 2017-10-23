@@ -219,11 +219,7 @@ html, body, h1, h2, h3, h4, h5, h6 {
 }
 
 .product-wrapper {
-  margin: 0px 4.5%;
-  
-  .product-actions {
-    padding-bottom: 60px;
-  }
+  margin: 0px 4.5% 60px 4.5%;
 }
 
 .product-price {
@@ -487,12 +483,28 @@ section.full-width.full-height {
   position: relative;
 }
 
-.row {
+.row-flex {
   display: flex;
-  width: 100%;
+  width: calc(100% + 30px);
   
-  .col {
+  .col-flex {
     float: none;
+  }
+}
+
+.row-flex-md {
+  flex-direction: column;
+  
+  @media(min-width: 768px) {
+    flex-direction: row;
+  }
+}
+
+.row-flex-lg {
+  flex-direction: column;
+  
+  @media(min-width: 1200px) {
+    flex-direction: row;
   }
 }
 

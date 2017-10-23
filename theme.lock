@@ -2,7 +2,7 @@
 assets/asili-design.js:
   development: 2017-10-23T10:00:12+13:00   bfdcf0df23609a89441b4796b27ff3ba
 assets/asili-design.scss.liquid:
-  development: 2017-10-23T11:15:21+13:00   2171e3d5cec4cf46e4fdc086a60a4ace
+  development: 2017-10-23T14:09:51+13:00   e657de6aa7dc9a70b4e948c00657eabe
 assets/img-asili-logo.png:
   development: 2017-10-20T22:52:56-04:00   4ef3d1fec4e65f8fc20970776112840d
 assets/img-navigation-journal.jpg:
@@ -10,24 +10,30 @@ assets/img-navigation-journal.jpg:
 assets/img-navigation-store.jpg:
   development: 2017-10-21T22:44:03+13:00   97c4cae494a505e14e1e8246ce07d2bf
 assets/video-homepage.jpg:
-  development: 2017-10-21T23:24:04+13:00   37d062c03788285e0f1d486e4216fe7d
+  development: 2017-10-23T13:38:26+13:00   5028c2bb666a392bbbe5246756d4eaf0
 assets/video-homepage.mp4:
-  development: 2017-10-21T23:42:45+13:00   8cfe9980cb734f78100050d89d6ed606
+  development: 2017-10-23T13:36:23+13:00   1e6ba75f442881168abda857824b4df5
 config/settings_schema.json:
-  development: 2017-10-20T22:52:02-04:00   2e1f3501d13cff70ecf288c14ef3e6d4
+  development: 2017-10-23T11:41:33+13:00   b31e7727689eeeb0653ab53c84a394fb
 layout/theme.liquid:
-  development: 2017-10-21T23:33:05+13:00   1fca0a455fae5f17fcf779f7a7cac8a4
+  development: 2017-10-23T13:58:36+13:00   5725b21abd2afc7149ad4ffda64256de
 snippets/footer.liquid:
   development: 2017-10-21T23:32:09+13:00   9651849fa89980fb123ac2df9c6fb225
 snippets/navbar.liquid:
-  development: 2017-10-23T10:22:40+13:00   016ea7d54abd4b092d1a3d4541492c34
+  development: 2017-10-23T13:42:04+13:00   e8dfd68fbd922c1d3781ec4ac25b0f3f
+snippets/slideshow.liquid:
+  development: 2017-10-23T13:45:47+13:00   df6c26d039acae49c64813ec94190cb8
+snippets/tag-list.liquid:
+  development: 2017-10-23T13:46:09+13:00   5fa49e81302964cd001a4b6af8a4ba8f
 templates/article.liquid:
   development: 2017-10-23T11:17:14+13:00   29d475d52e9a9f0676fa4dda63b3ed9a
 templates/blog.liquid:
-  development: 2017-10-23T11:14:25+13:00   895ad9008f62d54c4600a70a92e984b3
+  development: 2017-10-23T14:04:58+13:00   09726d0cb915f51a540e5d15dd425a6b
 templates/collection.liquid:
-  development: 2017-10-23T11:18:21+13:00   3de88a935eb7019d2021504e22dfc31a
+  development: 2017-10-23T14:11:13+13:00   ec3fb626a5c843981c36c56a91621dda
 templates/index.liquid:
-  development: 2017-10-23T10:19:53+13:00   3c4c46eb4c599b03d76b008a1f6bf671
+  development: 2017-10-23T13:53:05+13:00   d75af51ee4e6d451e45d2ab6ae7d955b
 templates/page.liquid:
-  development: 2017-10-23T09:22:02+13:00   a7c29d798641ed5fafaa0957a0f2a80c
+  development: 2017-10-23T13:55:15+13:00   0525c62a12e82320bd2cfc9445b37dc0
+templates/product.liquid:
+  development: 2017-10-23T13:47:09+13:00   4b3191a9c584241d561d349cb2f29cb4

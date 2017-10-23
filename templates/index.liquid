@@ -13,3 +13,15 @@
     </div>
   </div>
 </section>
+
+<script>
+  window.setTimeout(function() {
+    // Check if nav is already open
+    var bodyClasses = document.body.classList + "";
+    if(bodyClasses.indexOf("nav-open") < 0) {
+      // Nav isn't open, so let's open it
+      var button = document.getElementById("navigation-toggle");
+      button.click();
+    }
+  }, 8000);
+</script>

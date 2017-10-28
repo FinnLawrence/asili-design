@@ -11,18 +11,18 @@
     <link href="{{ 'css-bootstrap-min.css' | asset_url }}" rel="stylesheet">
     <link href="{{ 'css-bs4sf.css' | asset_url }}" rel="stylesheet">
     <link href="{{ 'asili-design.scss.css' | asset_url }}" rel="stylesheet">
-    
+
     <script src="https://use.typekit.net/udp6eta.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){console.log("Failed to load Typekit")}</script>
 
     <!-- HTML5 shim and Respond.js support for HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="{{ 'js-html5shiv-min.js' | asset_url }}"></script>
-    <script src="{{ 'js-respond-min.js' | asset_url }}"></script>
-    <link href="{{ 'respond-proxy.html' | asset_url | split: '?' | first }}" id="respond-proxy" rel="respond-proxy" />
-    <link href="{{ shop.url }}/search?q={{ respond_js_hash }}" id="respond-redirect" rel="respond-redirect" />
-    <script src="{{ shop.url }}/search?q={{ respond_js_hash }}" type="text/javascript"></script>
-    <![endif]-->
+<script src="{{ 'js-html5shiv-min.js' | asset_url }}"></script>
+<script src="{{ 'js-respond-min.js' | asset_url }}"></script>
+<link href="{{ 'respond-proxy.html' | asset_url | split: '?' | first }}" id="respond-proxy" rel="respond-proxy" />
+<link href="{{ shop.url }}/search?q={{ respond_js_hash }}" id="respond-redirect" rel="respond-redirect" />
+<script src="{{ shop.url }}/search?q={{ respond_js_hash }}" type="text/javascript"></script>
+<![endif]-->
 
     {{ content_for_header }}
 
@@ -47,18 +47,22 @@
 
   <body>
     <script>
-      function backgroundLoaded(element) {
-        var url = "url('" + element.src + "')";
+      function backgroundLoaded(element, imageShown) {
         var parent = element.parentNode;
+        
+        if (!imageShown) {
+          var url = "url('" + element.src + "')";
+          var bgPosition = element.dataset.position;
+          if (bgPosition) {
+            parent.style.backgroundPosition = bgPosition;
+          }
+          parent.style.backgroundImage = url;
+        }
+        
         var parentClasses = parent.classList + "";
         if(parentClasses.indexOf("fades-in") >= 0) {
           parent.style.opacity = 1; 
         }
-        var bgPosition = element.dataset.position;
-        if (bgPosition) {
-          parent.style.backgroundPosition = bgPosition;
-        }
-        parent.style.backgroundImage = url;
       }
     </script>
     <!-- Skip navigation (for screen read accessibility) -->
@@ -69,11 +73,11 @@
 
     <!-- Content -->
     <main id="content" class="page-wrap">
-          {% if template == 'list-collections' %}
-          {% include 'collection-listing' %}
-          {% else %}
-          {{ content_for_layout }}
-          {% endif %}
+      {% if template == 'list-collections' %}
+      {% include 'collection-listing' %}
+      {% else %}
+      {{ content_for_layout }}
+      {% endif %}
     </main>
 
     <!-- Site Footer -->

@@ -205,9 +205,52 @@ nav.navbar-default {
   visibility: hidden;
 }
 
+// #################
 // Font & Typography
-html, body, h1, h2, h3, h4, h5, h6 {
+// #################
+
+html, body, h1, h2, h3, h4, h5, h6, p {
   font-family: Proxima-Nova, sans-serif;
+}
+
+.font-weight-normal {
+  font-weight: normal !important;
+}
+
+.left-align {
+  text-align: left;
+}
+
+.right-align {
+  text-align: right;
+}
+
+ul.accented-list {
+  list-style-type: none;
+  padding-left: 0px;
+  
+  li {
+    position: relative;
+    padding-left: 30px;
+    
+    p{
+      font-weight: normal !important;
+    }
+
+    b {
+      text-transform: lowercase;
+    }
+  }
+
+  li:before{ 
+    content: '\00b7'; 
+    display: inline-block;
+    font-size: 80px;
+    line-height: 0px;
+    position: absolute;
+    left: 0px;
+    top: 3px;
+  }
 }
 
 // #####################
@@ -316,7 +359,7 @@ html, body, h1, h2, h3, h4, h5, h6 {
 
 .product-details {
   font-weight: 600;
-  
+
   h1 {
     margin-bottom: 25px;
   }
@@ -350,14 +393,108 @@ html, body, h1, h2, h3, h4, h5, h6 {
 
 .back-to-collection {
   margin-top: 40px;
-  
+
   a {
     text-transform: lowercase;
     color: $color-asili-dark;
   }
-  
+
   a:hover, a:focus {
     text-decoration: none;
+  }
+}
+
+// ##############
+// Materials page
+// ##############
+
+section.asili-materials {
+  position: relative;
+  z-index: 1;
+  margin-top: 50vw;
+  
+  .section-number {
+    position: absolute;
+    top: 20px;
+    margin: 0px;
+    font-size: 72px;
+    font-weight: bold;
+    font-family: UntitledSansBlack, sans-serif;
+  }
+  
+  .section-number-right {
+    right: 5%;
+  }
+  
+  .section-number-left {
+    left: 5%;
+  }
+  
+  .section-image {
+    position: absolute;
+    z-index: -1;
+  }
+  
+  .captioned-image-wrapper {
+    padding: 0px 5%;
+    margin-bottom: 30px;
+    
+    p {
+      font-weight: bold;
+      font-size: 16px;
+      padding-top: 5px;
+    }
+    
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+section.asili-materials-stone {
+  .section-image {
+    width: 60vw;
+    left: -10vw;
+    top: -25vw;
+  }
+}
+
+section.asili-materials-horn {
+  background-color: #2A2D48;
+  color: $color-asili-light;
+  padding-top: 60vw;
+  padding-bottom: 50px;
+  
+  .section-number {
+    top: calc(60vw + 20px);
+  }
+  
+  .content-wrapper {
+    color: $color-asili-light !important;
+    
+    h1 {
+      text-align: right;
+      color: #2A2D48;
+    }
+  }
+  
+  .section-image {
+    position: absolute;
+    right: 0px;
+    width: 50vw;
+    top: 15vw;
+  }
+}
+
+section.asili-materials-wood {
+  background-color: $color-asili-light;
+  color: #41394D;
+  margin-top: 0px;
+  padding: 50px 0px;
+  
+  .section-number {
+    top: 70px;
   }
 }
 
@@ -465,7 +602,7 @@ body.nav-open {
 
 section.nav-padded {
   margin-top: calc(14vh + 40px);
-  
+
   @media(min-width: 768px) {
     margin-top: calc(14vh + 3.5vw);
   }
@@ -486,7 +623,7 @@ section.full-width.full-height {
 .row-flex {
   display: flex;
   width: calc(100% + 30px);
-  
+
   .col-flex {
     float: none;
   }
@@ -494,7 +631,7 @@ section.full-width.full-height {
 
 .row-flex-md {
   flex-direction: column;
-  
+
   @media(min-width: 768px) {
     flex-direction: row;
   }
@@ -502,7 +639,7 @@ section.full-width.full-height {
 
 .row-flex-lg {
   flex-direction: column;
-  
+
   @media(min-width: 1200px) {
     flex-direction: row;
   }
@@ -511,7 +648,7 @@ section.full-width.full-height {
 .valign-wrapper {
   display: flex;
   align-items: center;
-  
+
   >* {
     width: 100%;
   }
@@ -618,6 +755,10 @@ section.full-width.full-height {
       min-height: 100vh;
     }
   }
+  
+  .asili-grid-half.asili-grid-spacer {
+    min-height: 0px;
+  }
 
   .asili-grid-image-background {
     background-size: cover;
@@ -696,7 +837,7 @@ form {
     border-color: $color-asili-dark;
     color: $color-asili-dark;
   }
-  
+
   .btn:hover, .btn:focus, .btn:active {
     background-color: $color-asili-dark;
     color: $color-asili-light;

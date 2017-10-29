@@ -225,14 +225,20 @@ html, body, h1, h2, h3, h4, h5, h6, p {
   text-align: right;
 }
 
+.flex-text {
+  @media(min-width: 1280px) {
+    font-size: calc(1.1vw - 1px) !important;
+  }
+}
+
 ul.accented-list {
   list-style-type: none;
   padding-left: 0px;
-  
+
   li {
     position: relative;
     padding-left: 30px;
-    
+
     p{
       font-weight: normal !important;
     }
@@ -250,6 +256,10 @@ ul.accented-list {
     position: absolute;
     left: 0px;
     top: 3px;
+
+    @media(min-width: 768px) {
+      top: 0.07em;
+    }
   }
 }
 
@@ -412,7 +422,7 @@ section.asili-materials {
   position: relative;
   z-index: 1;
   margin-top: 50vw;
-  
+
   .section-number {
     position: absolute;
     top: 20px;
@@ -421,30 +431,30 @@ section.asili-materials {
     font-weight: bold;
     font-family: UntitledSansBlack, sans-serif;
   }
-  
+
   .section-number-right {
     right: 5%;
   }
-  
+
   .section-number-left {
     left: 5%;
   }
-  
+
   .section-image {
     position: absolute;
     z-index: -1;
   }
-  
+
   .captioned-image-wrapper {
     padding: 0px 5%;
     margin-bottom: 30px;
-    
+
     p {
       font-weight: bold;
       font-size: 16px;
       padding-top: 5px;
     }
-    
+
     img {
       display: block;
       width: 100%;
@@ -465,20 +475,20 @@ section.asili-materials-horn {
   color: $color-asili-light;
   padding-top: 60vw;
   padding-bottom: 50px;
-  
+
   .section-number {
     top: calc(60vw + 20px);
   }
-  
+
   .content-wrapper {
     color: $color-asili-light !important;
-    
+
     h1 {
       text-align: right;
       color: #2A2D48;
     }
   }
-  
+
   .section-image {
     position: absolute;
     right: 0px;
@@ -492,9 +502,150 @@ section.asili-materials-wood {
   color: #41394D;
   margin-top: 0px;
   padding: 50px 0px;
-  
+
   .section-number {
     top: 70px;
+  }
+}
+
+@media(min-width: 768px) {
+  section.asili-materials {
+    margin-top: 0px;
+
+    .asili-grid-content {
+      p {
+        max-width: 20vw;
+      }
+    }
+
+    .asili-grid-half {
+      min-height: 0px;
+    }
+
+    .content-wrapper {
+      margin-right: auto;
+    }
+
+    .captioned-image-wrapper {
+      position: absolute;
+      z-index: -1;
+      padding: 0px;
+    }
+  }
+
+  section.asili-materials-stone {
+    z-index: 3;
+    padding-top: 25vw;
+
+    .desktop-wrapper {
+      height: 65vw;
+    }
+
+    .section-number {
+      top: 0px;
+      right: auto;
+      left: 9.2vw;
+      transform: translateY(-50%);
+    }
+
+    .section-image {
+      width: 45.4vw;
+      top: auto;
+      left: 9.4vw;
+      bottom: -15vw;
+    }
+
+    .estha-bowl {
+      width: 65.8vw;
+      left: 4vw;
+      top: 7vw;
+    }
+
+    .tom-dish {
+      width: 33.5vw;
+      bottom: 7vw;
+      right: 0px;
+
+      p {
+        padding-right: 10px;
+      }
+    }
+  }
+
+  section.asili-materials-horn {
+    z-index: 2;
+    padding-top: 37vw;
+    padding-bottom: 0px;
+
+    .section-number {
+      top: 16vw;
+      right: 15vw;
+      left: auto;
+    }
+
+    .content-wrapper {
+      h1 {
+        text-align: left;
+        color: $color-asili-light !important;
+      }
+    }
+
+    .desktop-wrapper {
+      height: 80vw;
+    }
+
+    .ido-tumbler {
+      width: 50vw;
+      left: 4vw;
+      top: 28vw;
+    }
+
+    .ido-vase {
+      width: 29vw;
+      bottom: 15vw;
+      right: 4vw;
+    }
+
+    .section-image {
+      width: 31vw;
+      left: 14vw;
+      bottom: -18vw;
+      top: auto;
+      right: auto;
+    }
+  }
+
+  section.asili-materials-wood {
+    padding-top: 24vw;
+    padding-bottom: 0px;
+    
+    .section-number {
+      left: 55vw;
+      right: auto;
+      top: 11.6vw;
+    }
+
+    .desktop-wrapper {
+      height: 110vw;
+    }
+    
+    .okema-spoons {
+      width: 52vw;
+      left: 0px;
+      top: 27vw;
+    }
+    
+    .squared-frank-bowl {
+      width: 29vw;
+      top: 16.5vw;
+      right: 8.5vw;
+    }
+    
+    .frank-bowl {
+      width: 50vw;
+      right: 25vw;
+      bottom: 0px;
+    }
   }
 }
 
@@ -744,6 +895,7 @@ section.full-width.full-height {
 .asili-grid-wrapper {
   @media(min-width: 768px) {
     display: flex;
+    flex-wrap: wrap;
   }
 
   .asili-grid-half {
@@ -755,7 +907,7 @@ section.full-width.full-height {
       min-height: 100vh;
     }
   }
-  
+
   .asili-grid-half.asili-grid-spacer {
     min-height: 0px;
   }
@@ -793,6 +945,7 @@ section.full-width.full-height {
 
       @media(min-width: 768px) {
         max-width: 25vw;
+        /*font-size: calc(0.67vw + 8.86px);*/
       }
     }
   }
@@ -809,6 +962,13 @@ section.full-width.full-height {
         margin-bottom: 5vh;
         margin-right: 15vw;
       }
+    }
+  }
+
+  .desktop-wrapper {
+    @media(min-width: 768px) {
+      width: 100%;
+      position: relative;
     }
   }
 }

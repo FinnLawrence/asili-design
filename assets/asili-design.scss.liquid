@@ -190,12 +190,51 @@ nav.navbar-default {
   }
 
   .nav-links-bottom {
-    /* TODO Remove display:none */
-    display: none;
     position: absolute;
+    z-index: 12;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     bottom: 0px;
     left: 0px;
+    padding: 0px 5%;
+    text-transform: lowercase;
+    font-family: UntitledSansBlack, sans-serif;
+    font-weight: bold;
+
+    li {
+      display: inline-block;
+
+      a {
+        display: inline-block;
+        padding: 20px 10px;
+        color: $color-asili-dark;
+        transition: all $navbar-animation-speed;
+      }
+
+      a:first-child {
+        margin-left: 0px;
+      }
+
+      a:last-child {
+        margin-right: 0px;
+      }
+
+      a:hover, a:focus {
+        color: $color-asili-light;
+        text-decoration: none;
+      }
+    }
+
+    li.contact {
+      margin-right: 50px;
+
+      a {
+        font-size: 32px;
+      }
+    }
   }
 }
 
@@ -595,7 +634,7 @@ section.asili-materials-wood {
     }
 
     .ido-tumbler {
-      width: 50vw;
+      width: 48vw;
       left: 4vw;
       top: 28vw;
     }
@@ -618,7 +657,7 @@ section.asili-materials-wood {
   section.asili-materials-wood {
     padding-top: 24vw;
     padding-bottom: 0px;
-    
+
     .section-number {
       left: 55vw;
       right: auto;
@@ -628,19 +667,19 @@ section.asili-materials-wood {
     .desktop-wrapper {
       height: 110vw;
     }
-    
+
     .okema-spoons {
       width: 52vw;
       left: 0px;
       top: 27vw;
     }
-    
+
     .squared-frank-bowl {
       width: 29vw;
       top: 16.5vw;
       right: 8.5vw;
     }
-    
+
     .frank-bowl {
       width: 50vw;
       right: 25vw;
@@ -711,6 +750,15 @@ section.asili-materials-wood {
       flex-direction: row-reverse;
     }
   }
+}
+
+
+// ##############
+// Customer Pages
+// ##############
+
+.customer-wrapper {
+  margin: 0px 4.5%;
 }
 
 // #############
@@ -976,6 +1024,10 @@ section.full-width.full-height {
 // #####
 // FORMS
 // #####
+
+.contact-wrapper {
+  margin: 0px 4.5%;
+}
 
 form {
 

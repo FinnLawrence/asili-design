@@ -42,21 +42,18 @@
 
     <!-- Additional (Bottom) Navigation Links -->
     <ul class="nav-links nav-links-bottom">
+      <li class="contact">
+        <a href="/pages/contact">Contact</a>
+      </li>
       <li>
         <a href="/search" title="Search..."><span class="glyphicon glyphicon-search"></span></a>
-      </li>
-      {% if shop.customer_accounts_enabled %}
-      {% if customer %}
-      <li>
+        {% if shop.customer_accounts_enabled %}
+        {% if customer %}
         <a href="/account">{{ customer.first_name }} {{ customer.last_name }}</a>
-      </li>
-      {% else %}
-      <li>
+        {% else %}
         {{ "Log In" | customer_login_link }}
-      </li>
-      {% endif %}
-      {% endif %}
-      <li>
+        {% endif %}
+        {% endif %}
         <a href="/cart">Cart ({{ cart.item_count }})</a>
       </li>
     </ul>

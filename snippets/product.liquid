@@ -11,7 +11,7 @@ By default, it's only used by the product-list.liquid snippet.
         <img src="{{ product.images.first | product_img_url: 'original' }}" alt="{{ product.title }}" onload="backgroundLoaded(this)"/>
       </div>
     </div>
-    <h5 class="product-price">
+    <h5 class="product-title">
       {{ product.title }}
       {% if product.compare_at_price_max > product.price and settings.product_show_sale_tag %}
       <span class="label label-success">SALE</span>

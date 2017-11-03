@@ -47,6 +47,7 @@
                 <!-- Add To Cart Button -->
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary btn-lg" id="product-add">Add to Cart</button>
+                  <span class="product-price">{{ product.price | money_with_currency | downcase }}</span>
                 </div>
 
               </form>

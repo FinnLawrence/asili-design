@@ -2,14 +2,14 @@
   document.body.className += " contact";
 </script>
 
-<section class="full-width full-height asili-grid-wrapper contact" data-background-color="{{ page.metafields.asili_page.page_background_color }}">
-  <div class="asili-grid-half asili-grid-content">
+<section class="full-width full-height nav-padded nav-padded-mobile asili-grid-wrapper contact" data-background-color="{{ page.metafields.asili_page.page_background_color }}">
+  <div class="asili-grid-half asili-grid-content left-align">
     <div class="content-wrapper">
       {{ page.content }}
     </div>
   </div>
   <div class="asili-grid-half asili-grid-content">
-    <div class="form-wrapper">
+    <div class="content-wrapper form-wrapper">
       {% form 'contact' %}
 
       <!-- Provide some feedback to the user that their form was submitted successfully. -->
@@ -42,121 +42,129 @@
       {% endif %}
 
       <!-- Present the contact form. -->
-      <div class="row">
-        <div class="col-md-4">
+      <div class="asili-form-pane asili-form-content">
 
-          <!-- Name -->
-          <div class="form-group">
-            <label for="contact[name]">Your Name</label>
-            <input type="text" class="form-control" id="contact[name]" name="contact[name]" placeholder="">
-          </div>
-
-          <!-- Email Address -->
-          <div class="form-group">
-            <label for="contact[email]">Email</label>
-            <input type="email" class="form-control" id="contact[email]" name="contact[email]" placeholder="name@example.com">
-          </div>
-
-          <!-- Phone Number -->
-          <div class="form-group">
-            <label for="contact[phone]">Phone Number</label>
-            <input type="tel" class="form-control" id="contact[phone]" name="contact[phone]" placeholder="555-555-5555">
-          </div>
-
-          <!-- Message -->
-          <div class="form-group">
-            <label for="contact[body]">Message</label>
-            <textarea rows="8" class="form-control" id="contact[body]" name="contact[body]" placeholder="Your Message"></textarea>
-          </div>
-
-          <!-- Submit Button -->
-          <button type="submit" class="btn btn-default btn-lg">Submit</button>
-
+        <!-- Name -->
+        <div class="form-group form-group-text">
+          <label for="contact[name]">Name</label>
+          <input type="text" class="form-control" id="contact[name]" name="contact[name]" placeholder="">
         </div>
-      </div>
+        
+        <!-- Enquiry Type -->
+        <div class="form-group form-group-radio">
+          <label class="radio-label">Enquiry</label>
+          <div class="radio">
+            <input type="radio" name="contact[enquiry]" id="contact[enquiry]1" value="Retail" checked>
+            <label for="contact[enquiry]1">Retail</label>
+          </div>
+          <div class="radio">
+            <input type="radio" name="contact[enquiry]" id="contact[enquiry]2" value="Wholesale">
+            <label for="contact[enquiry]2">Wholesale</label>
+          </div>
+          <div class="radio">
+            <input type="radio" name="contact[enquiry]" id="contact[enquiry]3" value="Press">
+            <label for="contact[enquiry]3">Press</label>
+          </div>
+        </div>
 
+        <!-- Email Address -->
+        <div class="form-group form-group-text">
+          <label for="contact[email]">Email</label>
+          <input type="email" class="form-control" id="contact[email]" name="contact[email]">
+        </div>
+
+        <!-- Message -->
+        <div class="form-group form-group-text form-group-textarea">
+          <label for="contact[body]">Message</label>
+          <textarea rows="4" class="form-control" id="contact[body]" name="contact[body]"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-default btn-lg">Submit</button>
+
+      </div>
       {% endform %}
     </div>
   </div>
 </section>
 <!--
 <section class="full-width full-height nav-padded">
-  <div class="contact-wrapper">
-    <header class="page-header">
-      <h1>{{ page.title }} <small>Get in touch!</small></h1>
-    </header>
+<div class="contact-wrapper">
+<header class="page-header">
+<h1>{{ page.title }} <small>Get in touch!</small></h1>
+</header>
 
-    <!-- Include any custom content.
-    {{ page.content }}
+<!-- Include any custom content.
+{{ page.content }}
 
-    <!-- Include the contact form.
-    {% form 'contact' %}
+<!-- Include the contact form.
+{% form 'contact' %}
 
-    <!-- Provide some feedback to the user that their form was submitted successfully.
-    {% if form.posted_successfully? %}
-    <div class="panel panel-success">
-      <div class="panel-heading">
-        <h3 class="panel-title">Form submitted successfully</h3>
-      </div>
-      <div class="panel-body">
-        Thanks for contacting us! We'll get back to you as soon as possible.
-      </div>
-    </div>
-    {% endif %}
+<!-- Provide some feedback to the user that their form was submitted successfully.
+{% if form.posted_successfully? %}
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title">Form submitted successfully</h3>
+</div>
+<div class="panel-body">
+Thanks for contacting us! We'll get back to you as soon as possible.
+</div>
+</div>
+{% endif %}
 
-    <!-- Likewise, provide feedback to the user if there were errors submitting the form.
-    {% if form.errors %}
-    <div class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title">Form submission error</h3>
-      </div>
-      <div class="panel-body">
-        <p>Sorry! We were unable to submit your inquiry because it contained {{ {{ form.errors | size | pluralize: 'an error', 'a few errors' }}. Please correct the following and submit again:</p>
-        <ul>
-          {% for field in form.errors %}
-          <li>The {{ field | capitalize | replace: 'Body', 'Message' }} field {{ form.errors.messages[field] }}.</li>
-          {% endfor %}
-        </ul>
-      </div>      
-    </div>
-    {% endif %}
+<!-- Likewise, provide feedback to the user if there were errors submitting the form.
+{% if form.errors %}
+<div class="panel panel-danger">
+<div class="panel-heading">
+<h3 class="panel-title">Form submission error</h3>
+</div>
+<div class="panel-body">
+<p>Sorry! We were unable to submit your inquiry because it contained {{ {{ form.errors | size | pluralize: 'an error', 'a few errors' }}. Please correct the following and submit again:</p>
+<ul>
+{% for field in form.errors %}
+<li>The {{ field | capitalize | replace: 'Body', 'Message' }} field {{ form.errors.messages[field] }}.</li>
+{% endfor %}
+</ul>
+</div>      
+</div>
+{% endif %}
 
-    <!-- Present the contact form.
-    <div class="row">
-      <div class="col-md-4">
+<!-- Present the contact form.
+<div class="row">
+<div class="col-md-4">
 
-        <!-- Name 
-        <div class="form-group">
-          <label for="contact[name]">Your Name</label>
-          <input type="text" class="form-control" id="contact[name]" name="contact[name]" placeholder="">
-        </div>
+<!-- Name 
+<div class="form-group">
+<label for="contact[name]">Your Name</label>
+<input type="text" class="form-control" id="contact[name]" name="contact[name]" placeholder="">
+</div>
 
-        <!-- Email Address
-        <div class="form-group">
-          <label for="contact[email]">Email</label>
-          <input type="email" class="form-control" id="contact[email]" name="contact[email]" placeholder="name@example.com">
-        </div>
+<!-- Email Address
+<div class="form-group">
+<label for="contact[email]">Email</label>
+<input type="email" class="form-control" id="contact[email]" name="contact[email]" placeholder="name@example.com">
+</div>
 
-        <!-- Phone Number
-        <div class="form-group">
-          <label for="contact[phone]">Phone Number</label>
-          <input type="tel" class="form-control" id="contact[phone]" name="contact[phone]" placeholder="555-555-5555">
-        </div>
+<!-- Phone Number
+<div class="form-group">
+<label for="contact[phone]">Phone Number</label>
+<input type="tel" class="form-control" id="contact[phone]" name="contact[phone]" placeholder="555-555-5555">
+</div>
 
-        <!-- Message
-        <div class="form-group">
-          <label for="contact[body]">Message</label>
-          <textarea rows="8" class="form-control" id="contact[body]" name="contact[body]" placeholder="Your Message"></textarea>
-        </div>
+<!-- Message
+<div class="form-group">
+<label for="contact[body]">Message</label>
+<textarea rows="8" class="form-control" id="contact[body]" name="contact[body]" placeholder="Your Message"></textarea>
+</div>
 
-        <!-- Submit Button
-        <button type="submit" class="btn btn-default btn-lg">Submit</button>
+<!-- Submit Button
+<button type="submit" class="btn btn-default btn-lg">Submit</button>
 
-      </div>
-    </div>
+</div>
+</div>
 
-    {% endform %}
-  </div>
+{% endform %}
+</div>
 </section> -->
 
 {% include 'background-color' %}

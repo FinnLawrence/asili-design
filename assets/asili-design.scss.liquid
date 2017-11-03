@@ -44,7 +44,10 @@
 
 $color-asili-dark: #312E35;
 $color-asili-dark-hover: #646168;
+$color-asili-dark-disabled: #B0ADB4;
 $color-asili-light: #FCF7EA;
+$color-asili-light-hover: #C9C4B7;
+$color-asili-light-disabled: #7D786B;
 
 // #########
 // Variables
@@ -55,6 +58,8 @@ $navbar-item-min-height: 40px;
 
 $navbar-animation-speed: 0.3s;
 $general-animation-speed: 0.5s;
+
+$form-input-height: 28px;
 
 // #######
 // Shopify
@@ -91,6 +96,10 @@ nav.navbar-default {
     img {
       min-height: $navbar-item-min-height;
       height: $navbar-item-height;
+    }
+
+    img.logo-light {
+      display: none;
     }
   }
 
@@ -134,6 +143,20 @@ nav.navbar-default {
 
     .navbar-toggle:hover, .navbar-toggle:focus {
       background-color: transparent;
+    }
+  }
+}
+
+.contact.dark {
+  .navbar-header {
+    .navbar-brand {
+      img.logo-light {
+        display: block;
+      }
+
+      img.logo-dark {
+        display: none;
+      }
     }
   }
 }
@@ -807,10 +830,16 @@ body.nav-open {
 }
 
 section.nav-padded {
-  margin-top: calc(14vh + 40px);
+  padding-top: calc(14vh + 40px);
 
   @media(min-width: 768px) {
-    margin-top: calc(14vh + 3.5vw);
+    padding-top: calc(14vh + 3.5vw);
+  }
+}
+
+section.nav-padded.nav-padded-mobile {
+  @media(min-width: 768px) {
+    padding-top: 0px;
   }
 }
 
@@ -988,6 +1017,10 @@ section.full-width.full-height {
     justify-content: center;
     padding: 20px 5%;
 
+    .form-wrapper {
+      width: 100%;
+    }
+
     h1, h2, h3, h4, h5, h6 {
       text-transform: lowercase;
       font-weight: bold;
@@ -1055,6 +1088,10 @@ section.full-width.full-height {
     }
   }
 
+  .asili-grid-content.left-align {
+    justify-content: flex-start;
+  }
+
   .asili-grid-content:last-child {
     /* Right hand side of the page */
 
@@ -1067,6 +1104,10 @@ section.full-width.full-height {
         margin-bottom: 5vh;
         margin-right: 15vw;
       }
+
+      .form-wrapper {
+        margin-right: 10vw;
+      }
     }
   }
 
@@ -1078,13 +1119,24 @@ section.full-width.full-height {
   }
 }
 
+.asili-grid-wrapper.contact {
+  .asili-grid-content {
+    h1 {
+      font-size: 48px;
+      margin-bottom: 0px;
+      text-align: center;
+
+      @media(min-width: 768px) {
+        text-align: left;
+        font-size: 6.25vw;
+      }
+    }
+  }
+}
+
 // #####
 // FORMS
 // #####
-
-.contact-wrapper {
-  margin: 0px 4.5%;
-}
 
 form {
 
@@ -1105,6 +1157,7 @@ form {
     background-color: transparent;
     border-color: $color-asili-dark;
     color: $color-asili-dark;
+    @include transition(all $general-animation-speed);
   }
 
   .btn:hover, .btn:focus, .btn:active {
@@ -1113,35 +1166,61 @@ form {
     outline: none;
   }
 
+  .form-group {
+    margin-bottom: 18px;
+
+    label {
+      font-weight: 600;
+    }
+
+    input, textarea {
+      color: $color-asili-dark;
+    }
+
+    .form-control {
+      background-color: transparent;
+    }
+  }
+
   .form-group.form-group-text {
     display: flex;
     align-items: center;
-    border-bottom: 2px solid black;
-    border-color: $color-asili-dark;
 
     label {
-      color: $color-asili-dark-hover;
+      color: $color-asili-dark;
+      padding-right: 10px;
+    }
+
+    input {
+      height: $form-input-height; 
     }
 
     input, textarea {
       box-shadow: none;
       border: 0px;
       border-radius: 0px;
-      padding: 7px 10px;
+      padding: 3px 2px;
+      border-bottom: 1px solid $color-asili-dark;
+    }
+  }
+
+  .form-group.form-group-text.form-group-textarea {
+    flex-wrap: wrap;
+
+    label {
+      width: 100%;
     }
   }
 
   .form-group.form-group-radio {
 
     label {
-      color: $color-asili-dark-hover;
+      color: $color-asili-dark;
     }
 
     .radio-label {
-      height: 34px;
-      line-height: 34px;
-      border-bottom: 2px solid black;
-      border-color: $color-asili-dark;
+      height: $form-input-height;
+      line-height: $form-input-height;
     }
 
     .radio+.radio {
@@ -1151,7 +1230,7 @@ form {
     .radio {
       position: relative;
       display: inline-block;
-      height: 34px;
+      height: $form-input-height;
       margin: 0px;
 
       input[type="radio"] {
@@ -1165,15 +1244,33 @@ form {
       }
 
       label {
+        position: relative;
         margin-left: 10px;
+        color: $color-asili-dark-disabled;
         padding: 0px;
-        height: 34px;
-        line-height: 34px;
+        height: $form-input-height;
+        line-height: $form-input-height;
         transition: color 0.3s;
+      }
+
+      label:after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        width: 0px;
+        height: $form-input-height;
+        border-bottom: 1px solid $color-asili-dark;
+        transition: width 0.3s;
+        @include transform(translateX(-50%));
       }
 
       input[type="radio"]:checked+label { 
         color: $color-asili-dark;
+      }
+
+      input[type="radio"]:checked+label:after { 
+        width: 100%;
       }
     }
   }
@@ -1191,5 +1288,65 @@ form {
     margin-left: 20px;
     font-weight: 600;
     font-size: 18px;
+  }
+}
+
+.shopify-challenge__container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body.dark {
+  form {
+    .btn {
+      color: $color-asili-light;
+      border-color: $color-asili-light-hover;
+    }
+
+    .btn:hover, .btn:focus, .btn:active {
+      background-color: $color-asili-light;
+      color: $color-asili-dark;
+    }
+
+    .form-group {
+      input, textarea {
+        color: $color-asili-light;
+      }
+    }
+
+    .form-group.form-group-text {
+      label {
+        color: $color-asili-light;
+      }
+
+      input, textarea {
+        border-bottom: 1px solid $color-asili-light
+      }
+    }
+
+    .form-group.form-group-radio {
+
+      label {
+        color: $color-asili-light;
+      }
+
+      .radio {
+
+        label {
+          color: $color-asili-light-disabled;
+        }
+
+        label:after {
+          border-bottom: 1px solid $color-asili-light;
+        }
+
+        input[type="radio"]:checked+label { 
+          color: $color-asili-light;
+        }
+      }
+    }
   }
 }

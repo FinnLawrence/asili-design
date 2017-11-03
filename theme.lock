@@ -64,7 +64,7 @@ templates/collection.liquid:
 templates/customers/login.liquid:
   development: 2017-10-30T19:19:18+13:00   071e6ca24f20b6382409b22a2ca93523
 templates/index.liquid:
-  development: 2017-11-04T10:11:37+13:00   834879188550bc24d2ed01a85ff1f985
+  development: 2017-11-04T10:19:08+13:00   37fda5f2747655526daf998dd2829baf
 templates/page.contact.liquid:
   development: 2017-10-30T19:26:32+13:00   1427b76cd201880faa4ccc2b2efb2d1a
 templates/page.liquid:

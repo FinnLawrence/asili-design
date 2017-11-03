@@ -2,7 +2,7 @@
 assets/asili-design.js:
   development: 2017-10-23T15:56:30+13:00   ae74075a2024e62c3c30bf86ee46a018
 assets/asili-design.scss.liquid:
-  development: 2017-10-30T19:24:28+13:00   4257184db254bd6f44dd52956bb91ed2
+  development: 2017-11-04T10:10:02+13:00   caac309bcadfa96ca358ab2e4df8c021
 assets/img-asili-logo.png:
   development: 2017-10-20T22:52:56-04:00   4ef3d1fec4e65f8fc20970776112840d
 assets/img-materials-cover.jpg:
@@ -64,13 +64,13 @@ templates/collection.liquid:
 templates/customers/login.liquid:
   development: 2017-10-30T19:19:18+13:00   071e6ca24f20b6382409b22a2ca93523
 templates/index.liquid:
-  development: 2017-10-30T18:21:42+13:00   9077c7cc928e9c7028223fc78c57c52c
+  development: 2017-11-04T10:11:37+13:00   834879188550bc24d2ed01a85ff1f985
 templates/page.contact.liquid:
   development: 2017-10-30T19:26:32+13:00   1427b76cd201880faa4ccc2b2efb2d1a
 templates/page.liquid:
   development: 2017-10-23T13:55:15+13:00   0525c62a12e82320bd2cfc9445b37dc0
 templates/page.materials.liquid:
-  development: 2017-10-29T19:26:59+13:00   f05c0fbfdd9f6c3b35ab7d130bf9ba7b
+  development: 2017-11-04T10:02:01+13:00   ac1f34c9f26f50b80554e93400a44400
 templates/product.liquid:
   development: 2017-10-23T17:18:13+13:00   9d056e182a7351f3cf4f44132992ebc9
 templates/search.liquid:

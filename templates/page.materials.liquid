@@ -1,16 +1,10 @@
 <section class="full-width full-height asili-grid-wrapper">
   <div class="asili-grid-half asili-grid-image-background fades-in">
-    <img src="{{ 'img-materials-cover.jpg' | asset_url }}" data-position="50% 50%" onload="backgroundLoaded(this)">
+    <img src="{{ page.metafields.asili_page.page_image }}" data-position="{{ page.metafields.asili_page.page_image_position }}" onload="backgroundLoaded(this)">
   </div>
   <div class="asili-grid-half asili-grid-content">
     <div class="content-wrapper">
-      <h1>Every Asili material:</h1>
-      <ul class="accented-list">
-        <li><p><b>Begins with responsible material sourcing,</b> as this forms a key chapter in a product’s story. By operating transparently, ASILI offers the design community an assurance of integrity.</p></li>
-        <li><p><b>Supports artisans in their trade</b> and through this support, contributes to the preservation of culturally significant crafts. Our aim is to attract a new global market, reviving the neglected traditions and materials of East Africa.</p></li>
-        <li><p><b>Educates both designer and customer</b> about the potential of a material that they may have never previously used before.</p></li>
-        <li><p><b>Results in the creation of a modern artifact.</b> We filter traditional techniques and natural materials through a contemporary lens, to create something new and timeless.</p></li>
-      </ul>
+      {{ page.content }}
     </div>
   </div>
 </section>

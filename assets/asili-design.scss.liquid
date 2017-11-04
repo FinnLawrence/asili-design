@@ -209,8 +209,8 @@ nav.navbar-default {
       a {
         text-transform: lowercase;
         font-family: UntitledSansBlack, sans-serif;
-        font-size: 50px;
-        line-height: 60px;
+        font-size: 45px;
+        line-height: 55px;
         font-weight: bold;
         color: $color-asili-dark;
         transition: all $navbar-animation-speed;
@@ -260,7 +260,7 @@ nav.navbar-default {
     width: 100%;
     bottom: 0px;
     left: 0px;
-    padding: 0px 5%;
+    padding: 20px 5%;
     text-transform: lowercase;
     font-family: UntitledSansBlack, sans-serif;
     font-weight: bold;
@@ -270,7 +270,7 @@ nav.navbar-default {
 
       a {
         display: inline-block;
-        padding: 20px 10px;
+        padding: 10px 10px;
         color: $color-asili-dark;
         transition: all $navbar-animation-speed;
       }
@@ -305,6 +305,21 @@ nav.navbar-default {
   visibility: hidden;
 }
 
+.nav-btns {
+  >li {
+    display: inline-block;
+    margin-top: 15px;
+
+    >a:hover, >a:focus {
+      background-color: $color-asili-dark;
+    }
+  }
+
+  li+li {
+    margin-left: 15px;
+  }
+}
+
 // #################
 // Font & Typography
 // #################
@@ -329,6 +344,23 @@ html, body, h1, h2, h3, h4, h5, h6, p {
   @media(min-width: 1280px) {
     font-size: calc(1.1vw - 1px) !important;
   }
+}
+
+p {
+  a {
+    color: inherit;
+    transition: all 0.3s;
+  }
+
+  a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    opacity: 0.5;
+  }
+}
+
+.bold {
+  font-weight: bold;
 }
 
 // #####################
@@ -982,6 +1014,16 @@ section.full-width.full-height {
   height: 100vh;
 }
 
+video::-webkit-media-controls {
+  display:none !important;
+  -webkit-appearance: none;
+}
+
+video::-webkit-media-controls-start-playback-button {
+  display: none!important;
+  -webkit-appearance: none;
+}
+
 .asili-grid-wrapper {
   @media(min-width: 768px) {
     display: flex;
@@ -1041,18 +1083,6 @@ section.full-width.full-height {
         max-width: 25vw;
         /*font-size: calc(0.67vw + 8.86px);*/
       }
-    }
-
-    a {
-      color: inherit;
-      transition: all 0.3s;
-
-    }
-
-    a:hover, a:focus {
-      color: inherit;
-      text-decoration: none;
-      opacity: 0.5;
     }
 
     ul {
@@ -1138,6 +1168,28 @@ section.full-width.full-height {
 // FORMS
 // #####
 
+.btn {
+  text-transform: lowercase;
+  font-weight: 600;
+  border-radius: 0px;
+  background-color: transparent;
+  border-color: $color-asili-dark;
+  color: $color-asili-dark;
+  @include transition(all $general-animation-speed);
+}
+
+.btn:hover, .btn:focus, .btn:active {
+  background-color: $color-asili-dark;
+  color: $color-asili-light;
+  outline: none;
+}
+
+.btn-group {
+  .btn+.btn {
+    margin-left: 15px;
+  }
+}
+
 form {
 
   label {
@@ -1150,30 +1202,15 @@ form {
     font-size: 13px;
   }
 
-  .btn {
-    text-transform: lowercase;
-    font-weight: 600;
-    border-radius: 0px;
-    background-color: transparent;
-    border-color: $color-asili-dark;
-    color: $color-asili-dark;
-    @include transition(all $general-animation-speed);
-  }
-
-  .btn:hover, .btn:focus, .btn:active {
-    background-color: $color-asili-dark;
-    color: $color-asili-light;
-    outline: none;
-  }
-
   .form-group {
     margin-bottom: 18px;
 
     label {
       font-weight: 600;
+      white-space: nowrap;
     }
 
-    input, textarea {
+    input, textarea, select {
       color: $color-asili-dark;
     }
 
@@ -1195,12 +1232,26 @@ form {
       height: $form-input-height; 
     }
 
-    input, textarea {
+    input+input {
+      margin-left: 15px;
+    }
+
+    input, textarea, select {
       box-shadow: none;
       border: 0px;
       border-radius: 0px;
       padding: 3px 2px;
       border-bottom: 1px solid $color-asili-dark;
+    }
+
+    .btn {
+      margin-left: 15px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+
+      .glyphicon-search {
+        font-size: 75%;
+      }
     }
   }
 
@@ -1210,6 +1261,23 @@ form {
     label {
       width: 100%;
     }
+  }
+
+  .form-group.form-group-text.form-group-select {
+    position: relative;
+
+    select {
+      -webkit-appearance: none;
+      -webkit-border-radius: 0px;
+    }
+  }
+
+  .form-group.form-group-text.form-group-select:before {
+    content: "\25bc";
+    position: absolute;
+    top: 12px;
+    right: 3px;
+    font-size: 10px;
   }
 
   .form-group.form-group-radio {
@@ -1272,6 +1340,18 @@ form {
       input[type="radio"]:checked+label:after { 
         width: 100%;
       }
+    }
+  }
+
+  .form-group.form-group-stacked {
+    flex-wrap: wrap;
+
+    input {
+      margin-top: 10px;
+    }
+
+    input+input {
+      margin-left: 0px
     }
   }
 }

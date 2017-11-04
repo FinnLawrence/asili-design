@@ -1,13 +1,11 @@
-<section class="full-width full-height nav-padded">
+<section class="full-width full-height nav-padded asili-light-bg">
   <div class="customer-wrapper">
-    <header class="page-header">
-      <h1>Your Account <small>Login</small></h1>
-    </header>
 
     <!-- Login Form -->
     <div class="row">
-      <div class="col-md-4">
-
+      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <h1>Login</h1>
+        <hr />
         <div class="recover-toggle">
 
           <!-- Regular Login Form -->
@@ -26,22 +24,22 @@
           {% endif %}
 
           <!-- Login Email Address -->
-          <div class="form-group">
+          <div class="form-group form-group-text">
             <label for="customer[email]">Email Address</label>
             <input class="form-control" type="email" id="customer[email]" name="customer[email]" value="" placeholder="Your Email Address" />
           </div>
 
           <!-- Login Password (If Required) -->
           {% if form.password_needed %}
-          <div class="form-group">
+          <div class="form-group form-group-text">
             <label for="customer[password]">Password</label>
             <input class="form-control" type="password" id="customer[password]" name="customer[password]" value="" placeholder="Your Password" />
           </div>
           {% endif %}
 
           <!-- Login Button -->
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+          <div class="form-group right-align">
+            <button type="submit" class="btn btn-primary btn-lg">Login</button>
           </div>
           {% endform %}
 
@@ -49,15 +47,15 @@
           {% if shop.checkout.guest_login %}
           {% form 'guest_login' %}
           <span class="help-block text-center">or</span>
-          <div class="form-group">
-            <button type="submit" class="btn btn-info btn-lg btn-block">Continue as Guest</button>
+          <div class="form-group right-align">
+            <button type="submit" class="btn btn-info btn-lg">Continue as Guest</button>
           </div>
           {% endform %}
           {% endif %}
 
           <!-- Recover Password / New Account Links -->
           <hr />
-          <p class="text-center">
+          <p class="bold text-center">
             <a href="#" onclick="toggleRecoverPasswordForm(); return false;">Forgotten Password</a>
             {% if shop.customer_accounts_optional %}
             &middot;
@@ -80,22 +78,21 @@
             </div>      
           </div>
 
-          <div class="form-group">
+          <div class="form-group form-group-text">
             <label for="email">Email Address</label>
-            <input class="form-control" type="email" id="email" name="email" value="" placeholder="Your Email Address" />
+            <input class="form-control" type="email" id="email" name="email" value="" />
           </div>
 
-          <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+          <div class="form-group right-align">
+            <button type="submit" class="btn btn-primary btn-lg">Submit</button>
           </div>
 
           <hr />
-          <p class="text-center">
+          <p class="text-center bold">
             <a href="#" onclick="toggleRecoverPasswordForm(); return false;">Never Mind</a>
           </p>
           {% endform %}
         </div>
-
       </div>
     </div>
   </div>

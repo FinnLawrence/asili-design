@@ -15,6 +15,18 @@
 </section>
 
 <script>
+  var videoWrapper = document.querySelector('.video-wrapper');
+  var videoBackground = document.getElementById("video-background");
+
+  if (/iPad|iPhone|iPod/.test(navigator.platform)) {
+    videoWrapper.style.backgroundImage = 'url("' + videoBackground.poster + '")';
+    videoWrapper.style.backgroundSize = 'cover';
+    videoWrapper.style.backgroundPosition = 'center';
+    videoBackground.style.display = 'none';
+  }
+</script>
+
+<script>
   window.setTimeout(function() {
     // Check if nav is already open
     var bodyClasses = document.body.classList + "";

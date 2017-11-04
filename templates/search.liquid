@@ -19,70 +19,67 @@ For more information, see http://gavinballard.com/using-respond.js-with-shopify-
 {% else %}
 <section class="full-width full-height nav-padded">
   <div class="collection-wrapper">
-    <header class="page-header">
-      <h1>Search</h1>
-    </header>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <h1>Search</h1>
+        <hr />
 
-    <!-- Search Box -->
-    <form action="/search" role="form">
-      <div class="row">
-        <div class="col-md-4">
-          <div class="input-group">
+        <!-- Search Box -->
+        <form action="/search" role="form">
+          <div class="form-group form-group-text">
             <input type="search" name="q" value="{{ search.terms }}" placeholder="Enter a search term..." class="form-control" />
-            <span class="input-group-btn">
-              <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span> Search</button>
-            </span>
+            <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span> Search</button>
+          </div>
+        </form>
+
+        <!-- Feedback on number of results found. -->
+        {% if search.performed %}
+        <div class="row">
+          <div class="col-md-12">
+            <hr />
+            <p class="lead">
+              {% if search.results.size == 0 %}
+              No results found for &ldquo;{{ search.terms }}&rdquo;.
+              {% else %}
+              {{ paginate.items }} {{ paginate.items | pluralize: 'result', 'results' }} found for &ldquo;{{ search.terms }}&rdquo;:
+              {% endif %}
+            </p>
           </div>
         </div>
-      </div>
-    </form>
+        {% endif %}
 
-    <!-- Feedback on number of results found. -->
-    {% if search.performed %}
-    <div class="row">
-      <div class="col-md-12">
-        <hr />
-        <p class="lead">
-          {% if search.results.size == 0 %}
-          No results found for &ldquo;{{ search.terms }}&rdquo;.
-          {% else %}
-          {{ paginate.items }} {{ paginate.items | pluralize: 'result', 'results' }} found for &ldquo;{{ search.terms }}&rdquo;:
-          {% endif %}
-        </p>
+        <!-- Display Results -->
+        {% if search.performed and search.results.size > 0 %}
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="media-list">
+              {% for item in search.results %}
+              <li class="media">
+                <a href="{{ item.url }}" class="pull-left">
+                  <img class="media-object" src="{{ item.featured_image | product_img_url: 'small' }}" alt="{{ item.title }}" />
+                </a>
+                <div class="media-body">
+                  <p class="media-heading bold">
+                    <a href="{{ item.url }}">{{ forloop.index | plus: paginate.current_offset }}. {{ item.title }}</a>
+                  </p>
+                  <p>
+                    {{ item.content | strip_html | truncatewords: 40 | highlight: search.terms }}
+                  </p>
+                </div>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 text-center">
+            {% include 'pagination' with 'result' %}
+          </div>
+        </div>
+        {% endif %}
       </div>
     </div>
-    {% endif %}
-
-    <!-- Display Results -->
-    {% if search.performed and search.results.size > 0 %}
-    <div class="row">
-      <div class="col-md-12">
-        <ul class="media-list">
-          {% for item in search.results %}
-          <li class="media">
-            <a href="{{ item.url }}" class="pull-left">
-              <img class="media-object" src="{{ item.featured_image | product_img_url: 'small' }}" alt="{{ item.title }}" />
-            </a>
-            <div class="media-body">
-              <h4 class="media-heading">
-                <a href="{{ item.url }}">{{ forloop.index | plus: paginate.current_offset }}. {{ item.title }}</a>
-              </h4>
-              <p>
-                {{ item.content | strip_html | truncatewords: 40 | highlight: search.terms }}
-              </p>
-            </div>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12 text-center">
-        {% include 'pagination' with 'result' %}
-      </div>
-    </div>
-    {% endif %}
   </div>
 </section>
 {% endif %}

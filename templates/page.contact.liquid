@@ -5,7 +5,9 @@
 <section class="full-width full-height nav-padded nav-padded-mobile asili-grid-wrapper contact" data-background-color="{{ page.metafields.asili_page.page_background_color }}">
   <div class="asili-grid-half asili-grid-content left-align">
     <div class="content-wrapper">
-      {{ page.content }}
+      <div class="text-wrapper">
+        {{ page.content }}
+      </div>
     </div>
   </div>
   <div class="asili-grid-half asili-grid-content">
@@ -42,14 +44,14 @@
       {% endif %}
 
       <!-- Present the contact form. -->
-      <div class="asili-form-pane asili-form-content">
+      <div class="asili-form-pane text-wrapper">
 
         <!-- Name -->
         <div class="form-group form-group-text">
           <label for="contact[name]">Name</label>
           <input type="text" class="form-control" id="contact[name]" name="contact[name]" placeholder="">
         </div>
-        
+
         <!-- Enquiry Type -->
         <div class="form-group form-group-radio">
           <label class="radio-label">Enquiry</label>

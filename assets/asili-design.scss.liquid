@@ -1406,21 +1406,33 @@ form {
   }
 }
 
-.panel.panel-danger {
-  border-color: $color-asili-light-danger-hover;
+.panel.panel-danger, .panel.panel-success {
+  border-color: $color-asili-dark;
 
   .panel-heading {
-    color: $color-asili-light-danger;
-    background-color: $color-asili-light-danger-hover;
+    color: $color-asili-light;
+    background-color: $color-asili-dark;
+    border-color: $color-asili-dark;
+  }
+  
+  .panel-body {
+    color: $color-asili-dark;
+    background-color: white;
   }
 }
 
 .panel.panel-info {
-  border-color: $color-asili-light-info-hover;
+  border-color: $color-asili-dark;
 
   .panel-heading {
-    color: $color-asili-light-info;
-    background-color: $color-asili-light-info-hover;
+    color: $color-asili-dark;
+    background-color: $color-asili-light;
+    border-color: $color-asili-dark;
+  }
+  
+  .panel-body {
+    color: $color-asili-dark;
+    background-color: white;
   }
 }
 
@@ -1472,6 +1484,21 @@ body.dark {
           color: $color-asili-light;
         }
       }
+    }
+  }
+  
+  .panel.panel-danger, .panel.panel-success {
+    border-color: $color-asili-light;
+    
+    .panel-heading {
+      color: $color-asili-dark;
+      background-color: $color-asili-light;
+      border-color: $color-asili-light;
+    }
+    
+    .panel-body {
+      color: $color-asili-light;
+      background-color: $color-asili-dark;
     }
   }
 }

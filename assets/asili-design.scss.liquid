@@ -1194,6 +1194,20 @@ video::-webkit-media-controls-start-playback-button {
   outline: none;
 }
 
+.btn.disabled {
+  background-color: transparent;
+  opacity: 1;
+  border-color: $color-asili-dark-disabled;
+  color: $color-asili-dark-disabled;
+}
+
+.btn.disabled:hover, .btn.disabled:focus, .btn.disabled:active {
+  background-color: transparent;
+  opacity: 1;
+  border-color: $color-asili-dark-disabled;
+  color: $color-asili-dark-disabled;
+}
+
 .btn-group {
   .btn+.btn {
     margin-left: 15px;
@@ -1414,7 +1428,7 @@ form {
     background-color: $color-asili-dark;
     border-color: $color-asili-dark;
   }
-  
+
   .panel-body {
     color: $color-asili-dark;
     background-color: white;
@@ -1429,7 +1443,7 @@ form {
     background-color: $color-asili-light;
     border-color: $color-asili-dark;
   }
-  
+
   .panel-body {
     color: $color-asili-dark;
     background-color: white;
@@ -1486,16 +1500,16 @@ body.dark {
       }
     }
   }
-  
+
   .panel.panel-danger, .panel.panel-success {
     border-color: $color-asili-light;
-    
+
     .panel-heading {
       color: $color-asili-dark;
       background-color: $color-asili-light;
       border-color: $color-asili-light;
     }
-    
+
     .panel-body {
       color: $color-asili-light;
       background-color: $color-asili-dark;

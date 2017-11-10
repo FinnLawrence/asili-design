@@ -2,31 +2,51 @@
 assets/asili-design.js:
   development: 2017-10-23T15:56:30+13:00   ae74075a2024e62c3c30bf86ee46a018
 assets/asili-design.scss.liquid:
-  development: 2017-11-07T17:12:45+13:00   e04405787ba5c180cf367501484e5b36
+  development: 2017-11-09T07:09:55+13:00   41d54ae80c8b3c98e80b56bd44581898
 assets/img-asili-logo-light.png:
   development: 2017-11-04T11:34:02+13:00   0a957cb89072abad27f71e1c0e5676cb
 assets/img-asili-logo.png:
   development: 2017-10-20T22:52:56-04:00   4ef3d1fec4e65f8fc20970776112840d
 assets/img-materials-estha-bowl.jpg:
-  development: 2017-11-07T17:37:29+13:00   557d6aad6f09a93d709eb772675d1e92
+  development: 2017-11-09T07:15:00+13:00   857d764a713b6347ee0cbfdb9b636127
 assets/img-materials-frank-bowl.jpg:
-  development: 2017-11-07T17:37:30+13:00   f4c5f27362eabffcd7626f2a6cf72619
+  development: 2017-11-09T07:31:25+13:00   b04ff809d231aa5dbc69dd550ed12b5a
 assets/img-materials-horn.jpg:
-  development: 2017-11-07T17:37:31+13:00   10496236209750ddea0932cc90cd2edf
+  development: 2017-11-09T07:21:54+13:00   31399c0f4c5334a79f8f260333f100db
 assets/img-materials-ido-tumbler.jpg:
-  development: 2017-11-07T17:37:31+13:00   4409eea5764497dc516f60c0f94c442a
+  development: 2017-11-09T07:24:35+13:00   f03452aa26db62552ce9ce1c0c6c1d43
 assets/img-materials-ido-vase.jpg:
-  development: 2017-11-07T17:37:32+13:00   99d0a5ed3a621f0c4697eb6aca9804c3
+  development: 2017-11-09T07:25:47+13:00   44b7ac0791f8c63506f992b05c1ba107
 assets/img-materials-okema-spoons.jpg:
-  development: 2017-11-07T17:37:32+13:00   f411ff9143a44fa74ad18620d9b77bc2
+  development: 2017-11-09T07:29:04+13:00   37c614216720ff83aeb8e8883c35fed1
+assets/img-materials-page-estha-bowl.jpg:
+  development: 2017-11-08T13:56:22+13:00   557d6aad6f09a93d709eb772675d1e92
+assets/img-materials-page-frank-bowl.jpg:
+  development: 2017-11-08T13:56:30+13:00   f4c5f27362eabffcd7626f2a6cf72619
+assets/img-materials-page-horn.jpg:
+  development: 2017-11-08T13:56:35+13:00   10496236209750ddea0932cc90cd2edf
+assets/img-materials-page-ido-tumbler.jpg:
+  development: 2017-11-08T13:56:40+13:00   4409eea5764497dc516f60c0f94c442a
+assets/img-materials-page-ido-vase.jpg:
+  development: 2017-11-08T13:56:52+13:00   99d0a5ed3a621f0c4697eb6aca9804c3
+assets/img-materials-page-okema-spoons.jpg:
+  development: 2017-11-08T13:56:58+13:00   f411ff9143a44fa74ad18620d9b77bc2
+assets/img-materials-page-squared-frank-bowl.jpg:
+  development: 2017-11-08T13:57:05+13:00   4e2a89b8f3f8ebd4bbf3970cd4b9c8a0
+assets/img-materials-page-stone.jpg:
+  development: 2017-11-08T13:57:10+13:00   42b3620b2dcf0b30bdd5bf95a5e34dd2
+assets/img-materials-page-tom-dish.jpg:
+  development: 2017-11-08T13:57:14+13:00   91f38a39701b4bc99f30f55967f8f37d
 assets/img-materials-squared-frank-bowl.jpg:
-  development: 2017-11-07T17:37:32+13:00   4e2a89b8f3f8ebd4bbf3970cd4b9c8a0
+  development: 2017-11-09T07:29:57+13:00   e66afcf372606b0b608b99ffc08475d0
 assets/img-materials-stone.jpg:
-  development: 2017-11-07T17:37:33+13:00   42b3620b2dcf0b30bdd5bf95a5e34dd2
+  development: 2017-11-09T07:18:12+13:00   95d54504fac838b4349775144923d632
 assets/img-materials-tom-dish.jpg:
-  development: 2017-11-07T17:37:33+13:00   91f38a39701b4bc99f30f55967f8f37d
+  development: 2017-11-09T07:17:06+13:00   6130ae165928753614c6346710ec132a
 assets/img-navigation-journal.jpg:
   development: 2017-10-21T22:48:02+13:00   db0d411d473b5087e6b977fe2c4a3348
+assets/img-navigation-mobile.jpg:
+  development: 2017-11-09T06:57:04+13:00   b5d2946ec3f7f4c210ec1ca5d908de97
 assets/img-navigation-store.jpg:
   development: 2017-10-21T22:44:03+13:00   97c4cae494a505e14e1e8246ce07d2bf
 assets/video-homepage.jpg:
@@ -72,13 +92,13 @@ templates/customers/login.liquid:
 templates/customers/register.liquid:
   development: 2017-11-04T18:27:17+13:00   5b124c18a8792e5273d58e59e5b40dae
 templates/index.liquid:
-  development: 2017-11-04T22:39:08+13:00   33de461829ec7906dadbddbc4ebc69d5
+  development: 2017-11-09T06:58:57+13:00   1825b49dfd3233f85093dbc1a5f12d81
 templates/page.contact.liquid:
-  development: 2017-11-06T17:21:49+13:00   6e2cb9ba4320af1efc1676545a273481
+  development: 2017-11-09T07:01:40+13:00   c5ee46bfec64b1895881ac7458df00cb
 templates/page.liquid:
   development: 2017-11-06T11:03:58+13:00   317874a95c7e2bd005de086d4b563cc6
 templates/page.materials.liquid:
-  development: 2017-11-07T17:39:49+13:00   d900710f4d5bf9fa67157cfe7a7dc1c5
+  development: 2017-11-09T07:31:35+13:00   5f226d63684a32f52a9b5beb8f229e87
 templates/product.liquid:
   development: 2017-11-07T16:59:05+13:00   d709b1d5649e6cc31ea32e9b98736b15
 templates/search.liquid:

@@ -2,7 +2,7 @@
 
 <section class="full-width full-height">
   <div class="video-wrapper full-width full-height">
-    <video id="video-background" poster="{{ 'video-homepage.jpg' | asset_url }}" autoplay loop muted plays-inline webkit-playsinline>
+    <video id="video-background" poster="{{ 'video-homepage.jpg' | asset_url }}" data-mobile-poster="{{ 'img-navigation-mobile.jpg' | asset_url }}" autoplay loop muted plays-inline webkit-playsinline>
       <source src="{{ 'video-homepage.mp4' | asset_url }}" type="video/mp4">
     </video>
   </div>
@@ -19,7 +19,7 @@
   var videoBackground = document.getElementById("video-background");
 
   if (/iPad|iPhone|iPod/.test(navigator.platform)) {
-    videoWrapper.style.backgroundImage = 'url("' + videoBackground.poster + '")';
+    videoWrapper.style.backgroundImage = 'url("' + videoBackground.dataset.mobilePoster + '")';
     videoWrapper.style.backgroundSize = 'cover';
     videoWrapper.style.backgroundPosition = 'center';
     videoBackground.style.display = 'none';

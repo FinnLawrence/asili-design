@@ -619,6 +619,10 @@ section.asili-materials-wood {
   }
 }
 
+.contact-info {
+  margin: 60px 4.5% 30px 4.5%;
+}
+
 @media(min-width: 768px) {
   section.asili-materials {
     margin-top: 0px;
@@ -1132,7 +1136,11 @@ video::-webkit-media-controls-start-playback-button {
   }
 
   .asili-grid-content.left-align {
-    justify-content: flex-start;
+    justify-content: center;
+
+    @media(min-width: 768px) {
+      justify-content: flex-start;
+    }
   }
 
   .asili-grid-content:last-child {

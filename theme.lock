@@ -8,7 +8,7 @@ assets/img-asili-logo-light.png:
 assets/img-asili-logo.png:
   development: 2017-10-20T22:52:56-04:00   4ef3d1fec4e65f8fc20970776112840d
 assets/img-materials-estha-bowl.jpg:
-  development: 2017-11-09T07:15:00+13:00   857d764a713b6347ee0cbfdb9b636127
+  development: 2017-11-10T21:56:28+13:00   ff39571158a512e751ce3c1987449394
 assets/img-materials-frank-bowl.jpg:
   development: 2017-11-09T07:31:25+13:00   b04ff809d231aa5dbc69dd550ed12b5a
 assets/img-materials-horn.jpg:
@@ -19,30 +19,12 @@ assets/img-materials-ido-vase.jpg:
   development: 2017-11-09T07:25:47+13:00   44b7ac0791f8c63506f992b05c1ba107
 assets/img-materials-okema-spoons.jpg:
   development: 2017-11-09T07:29:04+13:00   37c614216720ff83aeb8e8883c35fed1
-assets/img-materials-page-estha-bowl.jpg:
-  development: 2017-11-08T13:56:22+13:00   557d6aad6f09a93d709eb772675d1e92
-assets/img-materials-page-frank-bowl.jpg:
-  development: 2017-11-08T13:56:30+13:00   f4c5f27362eabffcd7626f2a6cf72619
-assets/img-materials-page-horn.jpg:
-  development: 2017-11-08T13:56:35+13:00   10496236209750ddea0932cc90cd2edf
-assets/img-materials-page-ido-tumbler.jpg:
-  development: 2017-11-08T13:56:40+13:00   4409eea5764497dc516f60c0f94c442a
-assets/img-materials-page-ido-vase.jpg:
-  development: 2017-11-08T13:56:52+13:00   99d0a5ed3a621f0c4697eb6aca9804c3
-assets/img-materials-page-okema-spoons.jpg:
-  development: 2017-11-08T13:56:58+13:00   f411ff9143a44fa74ad18620d9b77bc2
-assets/img-materials-page-squared-frank-bowl.jpg:
-  development: 2017-11-08T13:57:05+13:00   4e2a89b8f3f8ebd4bbf3970cd4b9c8a0
-assets/img-materials-page-stone.jpg:
-  development: 2017-11-08T13:57:10+13:00   42b3620b2dcf0b30bdd5bf95a5e34dd2
-assets/img-materials-page-tom-dish.jpg:
-  development: 2017-11-08T13:57:14+13:00   91f38a39701b4bc99f30f55967f8f37d
 assets/img-materials-squared-frank-bowl.jpg:
   development: 2017-11-09T07:29:57+13:00   e66afcf372606b0b608b99ffc08475d0
 assets/img-materials-stone.jpg:
   development: 2017-11-09T07:18:12+13:00   95d54504fac838b4349775144923d632
 assets/img-materials-tom-dish.jpg:
-  development: 2017-11-09T07:17:06+13:00   6130ae165928753614c6346710ec132a
+  development: 2017-11-10T21:57:33+13:00   54d10a10200459956a13607fd64c6a7b
 assets/img-navigation-journal.jpg:
   development: 2017-10-21T22:48:02+13:00   db0d411d473b5087e6b977fe2c4a3348
 assets/img-navigation-mobile.jpg:
@@ -76,7 +58,7 @@ snippets/tag-list.liquid:
 templates/404.liquid:
   development: 2017-10-23T16:31:48+13:00   d391708ab402823fb49ac28c6cffc1f1
 templates/article.liquid:
-  development: 2017-10-23T11:17:14+13:00   29d475d52e9a9f0676fa4dda63b3ed9a
+  development: 2017-11-10T21:41:40+13:00   83b249c5d441399bacb23ee12ebfb406
 templates/blog.liquid:
   development: 2017-10-23T14:04:58+13:00   09726d0cb915f51a540e5d15dd425a6b
 templates/cart.liquid:
@@ -98,7 +80,7 @@ templates/page.contact.liquid:
 templates/page.liquid:
   development: 2017-11-06T11:03:58+13:00   317874a95c7e2bd005de086d4b563cc6
 templates/page.materials.liquid:
-  development: 2017-11-09T07:31:35+13:00   5f226d63684a32f52a9b5beb8f229e87
+  development: 2017-11-10T21:41:10+13:00   d5f6e758521dd969426692213234a76c
 templates/product.liquid:
   development: 2017-11-07T16:59:05+13:00   d709b1d5649e6cc31ea32e9b98736b15
 templates/search.liquid:

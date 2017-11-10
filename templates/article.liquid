@@ -12,7 +12,7 @@
     <h2>{{ article.title }}</h2>
 
     <!-- Article byline and content. -->
-    <h3 class="lead text-muted">{{ article.published_at | date: "%d %B %Y" }} by {{ article.author }}</h3>
+    <h3 class="lead text-muted">{{ article.published_at | date: "%d %B %Y" }}</h3>
     {{ article.content }}
 
     <!-- Pager to previous and next articles in this blog. -->

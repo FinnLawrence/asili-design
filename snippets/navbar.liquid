@@ -23,8 +23,9 @@
     <ul class="nav-links nav-links-center">
       {% for link in linklists[settings.navbar_linklist].links %}
 
-      <li class="{% if link.active %}active{% endif %}">
+      <li class="navigation-link {% if link.active %}active{% endif %}">
         <a href="{{ link.url }}">{{ link.title }}</a>
+        <!--
         <div class="nav-link-image-wrapper">
           {% if link.type == "page_link" %}
           <img src="{{ link.object.metafields.asili_page.navigation_image }}" data-position="{{ link.object.metafields.asili_page.navigation_image_position}}" onload="backgroundLoaded(this)">
@@ -34,9 +35,16 @@
           <img src="{{ 'img-navigation-journal.jpg' | asset_url }}" data-position="50% bottom" onload="backgroundLoaded(this)">
           {% endif %}
         </div>
+        -->
       </li>
       {% endfor %}
-      <div class="nav-link-image-wrapper nav-list-image-wrapper"></div>
+      <div class="nav-link-image-wrapper nav-list-image-wrapper">
+        <div class="nav-video-wrapper video-wrapper full-width full-height">
+          <video id="navigation-background" poster="{{ 'video-homepage.jpg' | asset_url }}" data-mobile-poster="{{ 'img-navigation-mobile.jpg' | asset_url }}" autoplay loop muted plays-inline webkit-playsinline>
+            <source src="{{ 'video-homepage.mp4' | asset_url }}" type="video/mp4">
+          </video>
+        </div>
+      </div>
     </ul>
     {% endunless %}
 
@@ -61,3 +69,15 @@
 
   </div>
 </nav>
+
+<script>
+  var navWrapper = document.querySelector('.nav-video-wrapper');
+  var navBackground = document.getElementById("navigation-background");
+
+  if (/iPad|iPhone|iPod/.test(navigator.platform)) {
+    navWrapper.style.backgroundImage = 'url("' + navBackground.dataset.mobilePoster + '")';
+    navWrapper.style.backgroundSize = 'cover';
+    navWrapper.style.backgroundPosition = 'center';
+    navBackground.style.display = 'none';
+  }
+</script>

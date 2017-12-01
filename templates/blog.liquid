@@ -4,11 +4,14 @@
     <article class="blog-section">
       <div class="blog-preview">
         <a href="{{ article.url }}"><h3 class="blog-title">{{ article.title | escape }}</h3></a>
+        <div class="blog-excerpt">
         {% if article.excerpt.size > 0 %}
-          {{ article.excerpt }}
+          {{ article.excerpt }} 
         {% else %}
           <p>{{ article.content | strip_html | truncatewords: 50 }}</p>
         {% endif %}
+          <p><a href="{{ article.url }}">Read more >></a></p>
+        </div>
       </div>
       <div class="blog-image">
         <div class="image-wrapper">
@@ -18,6 +21,7 @@
     </article>
     {% endfor %}
   </div>
+  {% include 'carousel-nav' %}
 </section>
 <!--
 <header class="page-header">

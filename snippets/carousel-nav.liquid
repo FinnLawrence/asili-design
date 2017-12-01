@@ -1,0 +1,39 @@
+<nav class="carousel-nav">
+  <div class="carousel-nav-wrapper carousel-nav-prev">
+    <a href="" class="carousel-nav-link"></a>
+  </div>
+  <div class="carousel-nav-wrapper carousel-nav-next">
+    <a href="" class="carousel-nav-link"></a>
+  </div>
+</nav>
+
+<script>
+  var activeLink = document.querySelector('.navigation-link.active');
+  console.log(activeLink);
+  
+  if (activeLink) {
+    var prevLink = activeLink.previousElementSibling;
+    
+    if (prevLink) {
+      var prevUrl = prevLink.children[0].href;
+      if (prevUrl) {
+        var prevLinkWrapper = document.querySelector('.carousel-nav-prev');
+        var prevLinkElement = document.querySelector('.carousel-nav-prev .carousel-nav-link');
+        prevLinkElement.href = prevUrl;
+        prevLinkWrapper.className += " visible";
+      }
+    }
+  
+    var nextLink = activeLink.nextElementSibling;
+    
+    if (nextLink) {
+      var nextUrl = nextLink.children[0].href;
+      if (nextUrl) {
+        var nextLinkWrapper = document.querySelector('.carousel-nav-next');
+        var nextLinkElement = document.querySelector('.carousel-nav-next .carousel-nav-link');
+        nextLinkElement.href = nextUrl;
+        nextLinkWrapper.className += " visible";
+      }
+    }
+  }
+</script>

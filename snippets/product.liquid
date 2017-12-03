@@ -5,7 +5,7 @@ By default, it's only used by the product-list.liquid snippet.
 
 {% endcomment %}
 <div class="product-grid-wrapper">
-  <a a href="{{ product.url | within: collection }}" title="{{ product.title }}" class="product-grid">
+  <a href="{{ product.url | within: collection }}" title="{{ product.title }}" class="product-grid">
     <div class="product-image-wrapper">
       <div class="product-image square fades-in">
         <img src="{{ product.images.first | product_img_url: 'original' }}" alt="{{ product.title }}" onload="backgroundLoaded(this)"/>

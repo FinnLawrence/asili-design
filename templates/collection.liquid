@@ -20,9 +20,26 @@
     </div>
     {% else %}
     <!-- Include product list. -->
+    <div class="hide">{% increment counter %}</div>
     {% for product in collection.products %}
-    {% include 'product-list' with '2' %}
+    <a href="{{ product.url | within: collection }}" class="product-section">
+      <div class="product-image-wrapper product-image-wrapper-first product-image-wrapper-{{ product.metafields.asili_product.product_image_size | downcase }}">
+        <div class="product-image fades-in">
+          <img src="{{ product.images.first | product_img_url: 'original' }}" alt="{{ product.title }}" onload="backgroundLoaded(this)"/>
+        </div>
+      </div>
+      <div class="product-image-wrapper product-image-wrapper-last">
+        <div class="product-image fades-in">
+          <img src="{{ product.images.last | product_img_url: 'original' }}" alt="{{ product.title }}" onload="backgroundLoaded(this)"/>
+        </div>
+      </div>
+      <div class="product-info">
+        <h2 class="product-title">{% increment counter %}.<br>{{ product.title }}<br>{{ product.metafields.asili_product.product_material }}<br>{{ product.price | money }}</h2>
+        <div class="product-snippet">{{ product.metafields.asili_product.product_snippet }}</div>
+      </div>
+    </a>
     {% endfor %}
     {% endif %}
+    {% include 'carousel-nav' %}
   </div>
 </section>

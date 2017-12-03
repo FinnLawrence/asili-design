@@ -2,30 +2,25 @@
   <div class="product-wrapper">
     <!-- Wrapping Product Div -->
     <div itemscope itemtype="http://schema.org/Product">
-      <div class="row row-flex row-flex-lg">
-        <div class="col-flex col-lg-7 valign-wrapper">
-          <div class="product-images-container">
-            <div class="product-images-wrapper">
-              {% for image in product.images %}
-              <div id="product-image-{% increment target %}" class="product-image square fades-in">
-                <img src="{{ image | product_img_url: 'original' }}" alt="{{ product.title }}" onload="backgroundLoaded(this)"/>
+      <div class="row-flex row-flex-lg">
+        <div class="col-flex col-images valign-wrapper">
+          <div class="product-images-wrapper">
+            <div class="product-image-wrapper product-image-wrapper-last">
+              <div class="product-image fades-in">
+                <img src="{{ product.images.last | product_img_url: 'original' }}" alt="{{ product.title }}" onload="backgroundLoaded(this)"/>
               </div>
-              {% endfor %}
             </div>
-            <div class="product-image-selector">
-              {% for image in product.images %}
-              <a href="#product-image-{% increment link %}" class="product-thumbnail square fades-in">
-                <img src="{{ image | product_img_url: 'medium' }}" alt="{{ product.title }}" onload="backgroundLoaded(this)"/>
-              </a>
-              {% endfor %}
+            <div class="product-image-wrapper product-image-wrapper-first">
+              <div class="product-image fades-in">
+                <img src="{{ product.images.first | product_img_url: 'original' }}" alt="{{ product.title }}" onload="backgroundLoaded(this)"/>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-flex col-lg-5 valign-wrapper">
+        <div class="col-flex col-actions valign-wrapper">
           <div class="product-actions">
-            <div class="product-details">
+            <div class="product-title">
               <h1><span itemprop="name">{{ product.title }}</span><!-- Availability Microdata --><meta itemprop="availability" content="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}" /></h1>
-              {{ product.description }}
             </div>
             <!-- Add to Cart Form -->
             <div class="form-add-to-cart">
@@ -45,18 +40,26 @@
                 {% endif %}
 
                 <!-- Add To Cart Button -->
-                <div class="form-group">
+                <div class="form-group quantity">
                   {% if product.available %}
-                  <button type="submit" class="btn btn-primary btn-lg" id="product-add">Add to Cart</button>
+                  <label for="quantity">QTY</label>
+                  <input min="1" type="number" id="quantity" name="quantity" value="1"/>
+                  <button type="submit" class="btn btn-primary btn-lg" id="product-add">Order</button>
                   {% else %}
-                  <button class="btn btn-primary btn-large disabled" disabled>Coming Soon</button>
+                  <button class="btn btn-primary btn-lg disabled" disabled>Coming Soon</button>
                   {% endif %}
-                  <span class="product-price">{{ product.price | money_with_currency | downcase }}</span>
                 </div>
 
               </form>
             </div>
             <!-- End Add to Cart Form -->
+            <div class="product-price">
+              <h2>{{ product.price | money }}</h2>
+            </div>
+            <div class="product-description">
+              <hr>
+              {{ product.description }}
+            </div>
             {% if collection %}
             <div class="back-to-collection">
               <a href="{{ collection.url }}">&lt; Back to {{ collection.title }}</a>

@@ -2,7 +2,7 @@
 assets/asili-design.js:
   development: 2017-10-23T15:56:30+13:00   ae74075a2024e62c3c30bf86ee46a018
 assets/asili-design.scss.liquid:
-  development: 2017-12-02T10:47:04+13:00   b9f1403aa787b69db854ddecbf6a48cb
+  development: 2017-12-03T18:58:47+13:00   d309c1230fb5e2ecc6c0c0c3c555e71c
 assets/favicon.png:
   development: 2017-11-27T18:48:57+13:00   ed8fe2d971dfca07411c9ea1678d06a9
 assets/img-asili-logo-light.png:
@@ -44,7 +44,7 @@ layout/theme.liquid:
 snippets/background-color.liquid:
   development: 2017-12-02T10:16:30+13:00   f28266a65359fd1df9a025e0fd698b47
 snippets/carousel-nav.liquid:
-  development: 2017-12-02T10:31:39+13:00   b43cced68407f12d9ea047de93f696fa
+  development: 2017-12-03T19:14:40+13:00   73ca2b8a2eccab2aeb0990381bb076f9
 snippets/collection-listing.liquid:
   development: 2017-10-23T16:32:20+13:00   191d9f9b70a811d8c0261d472c2ee21e
 snippets/footer.liquid:
@@ -54,7 +54,7 @@ snippets/navbar.liquid:
 snippets/product-list.liquid:
   development: 2017-10-23T17:10:04+13:00   25d8020a427eb70f48d91a5e5fa76c7b
 snippets/product.liquid:
-  development: 2017-11-04T10:26:28+13:00   853a6ba046ef4ca76b82b54693c508c0
+  development: 2017-12-03T17:13:12+13:00   cf4b31e8a88b3ec728d63660caa25e22
 snippets/slideshow.liquid:
   development: 2017-10-23T13:45:47+13:00   df6c26d039acae49c64813ec94190cb8
 snippets/tag-list.liquid:
@@ -68,7 +68,7 @@ templates/blog.liquid:
 templates/cart.liquid:
   development: 2017-10-23T16:39:14+13:00   adf4e0fe131fffe5d986a38ad4e46aca
 templates/collection.liquid:
-  development: 2017-10-23T16:58:35+13:00   4ca035d6c315572f53c08bd5e20defcc
+  development: 2017-12-03T18:45:27+13:00   ceca98d60c17b4526d1dabde7d2d39f3
 templates/customers/account.liquid:
   development: 2017-11-06T10:55:19+13:00   a07e34d7f20747fc77e4d740049d903d
 templates/customers/addresses.liquid:
@@ -86,6 +86,6 @@ templates/page.liquid:
 templates/page.materials.liquid:
   development: 2017-12-02T10:29:45+13:00   1e95475c2a366ea324b01121de563cf0
 templates/product.liquid:
-  development: 2017-11-07T16:59:05+13:00   d709b1d5649e6cc31ea32e9b98736b15
+  development: 2017-12-03T18:54:53+13:00   957bbb138dea15f35366c4c3480cdbfe
 templates/search.liquid:
   development: 2017-11-04T22:15:42+13:00   d0c3b3bc2eff65feb05545a59db77365

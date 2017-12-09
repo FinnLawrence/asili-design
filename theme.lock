@@ -2,7 +2,7 @@
 assets/asili-design.js:
   development: 2017-12-09T15:58:52+13:00   fbe2265d7b46aff6ce09522597511a64
 assets/asili-design.scss.liquid:
-  development: 2017-12-09T16:22:46+13:00   34cc743b23f98c8835d50f3021902764
+  development: 2017-12-09T16:47:39+13:00   377473b5d9e07fe68bf45344fa049ebf
 assets/favicon.png:
   development: 2017-11-27T18:48:57+13:00   ed8fe2d971dfca07411c9ea1678d06a9
 assets/img-asili-logo-light.png:
@@ -88,6 +88,6 @@ templates/page.liquid:
 templates/page.materials.liquid:
   development: 2017-12-04T21:59:10+13:00   c958172f8cd9bb0dc31da2347d69405b
 templates/product.liquid:
-  development: 2017-12-09T15:57:28+13:00   0cb4115c1479d50dcd9f48450aa6959f
+  development: 2017-12-09T16:54:52+13:00   1147389479d9ec4ecbd6be25c5e1cbc1
 templates/search.liquid:
   development: 2017-11-04T22:15:42+13:00   d0c3b3bc2eff65feb05545a59db77365

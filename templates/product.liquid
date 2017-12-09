@@ -4,17 +4,14 @@
     <div itemscope itemtype="http://schema.org/Product">
       <div class="row-flex row-flex-lg">
         <div class="col-flex col-images valign-wrapper">
-          <div class="product-images-wrapper">
-            <div class="product-image-wrapper product-image-wrapper-last">
-              <a href="{{ product.images.last | product_img_url: 'original' }}" class="product-image fades-in" data-toggle="lightbox" data-gallery="product-images">
-                <img src="{{ product.images.last | product_img_url: 'original' }}" alt="{{ product.title }}" onload="backgroundLoaded(this)"/>
+          <div class="product-images-wrapper product-images-gallery">
+            {% for image in product.images %}
+            <div class="product-image-wrapper">
+              <a href="{{ image | img_url: '2000x' }}" class="product-image fades-in" data-toggle="lightbox" data-gallery="product-images">
+                <img src="{{ image | img_url: '750x' }}" alt="{{ product.title }}" onload="backgroundLoaded(this)"/>
               </a>
             </div>
-            <div class="product-image-wrapper product-image-wrapper-first">
-              <a href="{{ product.images.first | product_img_url: 'original' }}" class="product-image fades-in" data-toggle="lightbox" data-gallery="product-images">
-                <img src="{{ product.images.first | product_img_url: 'original' }}" alt="{{ product.title }}" onload="backgroundLoaded(this)"/>
-              </a>
-            </div>
+            {% endfor %}
           </div>
         </div>
         <div class="col-flex col-actions valign-wrapper">

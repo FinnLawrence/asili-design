@@ -6,14 +6,14 @@
         <div class="col-flex col-images valign-wrapper">
           <div class="product-images-wrapper">
             <div class="product-image-wrapper product-image-wrapper-last">
-              <div class="product-image fades-in">
+              <a href="{{ product.images.last | product_img_url: 'original' }}" class="product-image fades-in" data-toggle="lightbox" data-gallery="product-images">
                 <img src="{{ product.images.last | product_img_url: 'original' }}" alt="{{ product.title }}" onload="backgroundLoaded(this)"/>
-              </div>
+              </a>
             </div>
             <div class="product-image-wrapper product-image-wrapper-first">
-              <div class="product-image fades-in">
+              <a href="{{ product.images.first | product_img_url: 'original' }}" class="product-image fades-in" data-toggle="lightbox" data-gallery="product-images">
                 <img src="{{ product.images.first | product_img_url: 'original' }}" alt="{{ product.title }}" onload="backgroundLoaded(this)"/>
-              </div>
+              </a>
             </div>
           </div>
         </div>

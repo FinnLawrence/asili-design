@@ -1,15 +1,20 @@
 {% comment %}
 
-  This snippet renders a cart item as a table row in the checkout.
+This snippet renders a cart item as a table row in the checkout.
 
-  For more information, see:
-   - http://docs.shopify.com/themes/liquid-variables/cart
+For more information, see:
+- http://docs.shopify.com/themes/liquid-variables/cart
 
 {% endcomment %}
 <tr>
   <td>
-    <a href="#" class="close" title="Remove {{ cart-item.product.title }} from your cart" onclick="remove_item({{cart-item.variant.id}}); return false;">&times;</a>
-
+    <div class="product-image-wrapper product-image-wrapper-last">
+      <a href="{{ cart-item.product.images.last | product_img_url: 'original' }}" class="product-image fades-in" data-toggle="lightbox" data-gallery="cart-images">
+        <img src="{{ cart-item.product.images.last | product_img_url: 'original' }}" alt="{{ card-item.product.title }}" onload="backgroundLoaded(this)"/>
+      </a>
+    </div>
+  </td>
+  <td>
     <h4>
       <a href="{{ item.product.url }}" target="_blank">
         {{ cart-item.title }}
@@ -27,5 +32,5 @@
     <input type="text" class="form-control text-center" size="4" name="updates[{{cart-item.variant.id}}]" id="updates_{{ cart-item.variant.id }}" value="{{ cart-item.quantity }}" />
   </td>
 
-  <td class="text-right">{{ cart-item.line_price | money }}</td>
+  <td class="text-right">{{ cart-item.line_price | money }}<a href="#" class="close" title="Remove {{ cart-item.product.title }} from your cart" onclick="remove_item({{cart-item.variant.id}}); return false;">&times;</a></td>
 </tr>

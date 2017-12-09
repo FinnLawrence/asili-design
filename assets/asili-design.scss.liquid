@@ -452,6 +452,29 @@ p {
   margin: 0px 4.5%;
 }
 
+a.product-image {
+  display: block;
+}
+
+#cartform {
+  margin-bottom: 50px;
+  
+  .product-image-wrapper {
+    width: 10vw;
+  }
+  
+  .table>tbody>tr>td {
+    position: relative;
+    vertical-align: middle;
+    
+    .close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+    }
+  }
+}
+
 .product-wrapper {
   margin: 0px 4.5% 60px 4.5%;
 
@@ -586,10 +609,6 @@ p {
       }
     }
   }
-}
-
-@media(min-width: 1200px) {
-  
 }
 
 .product-image-wrapper-first .product-image:before {

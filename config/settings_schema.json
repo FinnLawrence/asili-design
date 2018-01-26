@@ -174,6 +174,45 @@
     ]
   },
   {
+    "name": "Home Page",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Background"
+      },
+      {
+        "type": "select",
+        "id": "homepage_background_select",
+        "label": "Background Type",
+        "options": [
+          {
+            "value": "video",
+            "label": "Video Loop"
+          },
+          {
+            "value": "image",
+            "label": "Static Image"
+          }
+        ]
+      },
+      {
+        "type": "image",
+        "id": "homepage_background_video",
+        "label": "Background Video"
+      },
+      {
+        "type": "image",
+        "id": "homepage_background_video_poster",
+        "label": "Background Video Poster"
+      },
+      {
+        "type": "image",
+        "id": "homepage_background_image",
+        "label": "Background Image"
+      }
+    ]
+  },
+  {
     "name": "Navigation Bar",
     "settings": [
       {

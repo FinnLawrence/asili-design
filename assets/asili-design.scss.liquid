@@ -300,7 +300,20 @@ nav.navbar-default {
       margin-right: 50px;
 
       a {
-        font-size: 32px;
+        font-size: 24px;
+        
+        @media(min-width: 768px) {
+          font-size: 32px;
+        }
+      }
+    }
+    
+    li.social {
+      display: flex;
+      align-items: center;
+      
+      i.fa {
+        font-size: 24px
       }
     }
   }

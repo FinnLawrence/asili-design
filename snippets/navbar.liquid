@@ -40,8 +40,8 @@
       {% endfor %}
       <div class="nav-link-image-wrapper nav-list-image-wrapper">
         <div class="nav-video-wrapper video-wrapper full-width full-height">
-          <video id="navigation-background" poster="{{ 'video-homepage.jpg' | asset_url }}" data-mobile-poster="{{ 'img-navigation-mobile.jpg' | asset_url }}" autoplay loop muted plays-inline webkit-playsinline>
-            <source src="{{ 'video-homepage.mp4' | asset_url }}" type="video/mp4">
+          <video id="navigation-background" poster="{{ 'img-navigation.jpg' | asset_url }}" data-mobile-poster="{{ 'img-navigation-mobile.jpg' | asset_url }}" autoplay loop muted plays-inline webkit-playsinline>
+            <source src="{{ 'video-home.mp4' | asset_url }}" type="video/mp4">
           </video>
         </div>
       </div>
@@ -53,8 +53,10 @@
       <li class="contact">
         <a href="/pages/contact">Contact</a>
       </li>
-      <li>
-        <a href="/search" title="Search..."><span class="glyphicon glyphicon-search"></span></a>
+      <li class="social">
+        <a href="https://www.instagram.com/asili.co/" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.facebook.com/asili.co/" target="_blank" title="Facebook"><i class="fa fa-facebook-square"></i></a>
+        <a href="/search" title="Search..."><i class="fa fa-search"></i></a>
         {% if shop.customer_accounts_enabled %}
         {% if customer %}
         <a href="/account">My Account</a>

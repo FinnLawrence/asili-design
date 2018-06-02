@@ -1,10 +1,8 @@
 <nav class="navbar navbar-default" role="navigation">
   <div class="navbar-header">
 
-    {% unless template == 'index' %}
     <!-- Brand / Logo -->
     <a class="navbar-brand" href="{{ shop.url }}" title="{{ shop.name }}"><img src="{{ 'img-asili-logo.png' | asset_url }}" alt="{{ shop.name }}" class="logo-dark"/><img src="{{ 'img-asili-logo-light.png' | asset_url }}" alt="{{ shop.name }}" class="logo-light" /></a>
-    {% endunless %}
 
     <!-- Toggle Button for Navbar -->
     <div class="navbar-toggle-wrapper">
@@ -16,7 +14,7 @@
   </div>
 
   <!-- Main Navigation Content -->
-  <div id="navigation" class="full-screen-nav-wrapper hidden {% if page.handle != "" %}nav-{{ page.handle }}{% endif %}">
+  <div id="navigation" class="full-screen-nav-wrapper{% unless template == 'index' %} hidden{% endunless %}{% if page.handle != "" %} nav-{{ page.handle }}{% endif %}">
 
     <!-- Display linklist selected in theme settings. -->
     {% unless linklists[settings.navbar_linklist] == empty %}
@@ -51,7 +49,7 @@
     <!-- Additional (Bottom) Navigation Links -->
     <ul class="nav-links nav-links-bottom">
       <li class="contact">
-        <a href="/pages/contact">Contact</a>
+        <a href="https://cdn.shopify.com/s/files/1/2436/4491/files/Asili_Lookbook_2018.pdf?613665605400823297" target="_blank">Lookbook</a>
       </li>
       <li class="social">
         <a href="https://www.instagram.com/asili.co/" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a>

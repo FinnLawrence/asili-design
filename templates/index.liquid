@@ -6,12 +6,12 @@
       <source src="{{ 'video-home.mp4' | asset_url }}" type="video/mp4">
     </video>
   </div>
-  <div class="brand-wrapper">
+  <!--<div class="brand-wrapper">
     <a class="brand-content" onclick="document.getElementById('navigation-toggle').click()">
       <img src="{{ 'img-asili-logo.png' | asset_url }}" alt="{{ shop.name }}" />
       <p class="brand-text hidden">/ ah-see-lee /<br>rise, root, origin</p>
     </a>
-  </div>
+  </div>-->
 </section>
 
 <script>
@@ -26,7 +26,13 @@
   }
 </script>
 
-<script>
+<style>
+  .navbar-toggle-wrapper, .full-screen-nav-wrapper .nav-links-center .nav-link-image-wrapper.nav-list-image-wrapper {
+    display: none !important;
+  }
+</style>
+
+<!--<script>
   window.setTimeout(function() {
     // Check if nav is already open
     var bodyClasses = document.body.classList + "";
@@ -36,4 +42,4 @@
       button.click();
     }
   }, 5000);
-</script>
+</script>-->
